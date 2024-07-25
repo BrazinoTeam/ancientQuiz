@@ -9,13 +9,13 @@ class OnboardingScreenView: UIView {
     
     private (set) var bgImage: UIImageView = {
         let imageView = UIImageView()
-//        imageView.image = .bgOther
+        imageView.image = .bgClassic
         return imageView
     }()
     
     
     private (set) var titleLabel: UILabel = {
-        let label = UILabel.createLabel(withText: "Loading", font: .customFont(font: .joti, style: .regular, size: 20), textColor: .red, paragraphSpacing: 1, lineHeightMultiple: 0.96)
+        let label = UILabel()
         return label
     }()
     

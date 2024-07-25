@@ -1,8 +1,28 @@
 //
 //  LeaderboardVC.swift
-//  ancientQuiz
-//
-//  Created by apple on 25.07.2024.
-//
 
 import Foundation
+import UIKit
+import SnapKit
+
+class LeaderboardVC: UIViewController {
+    
+
+    var contentView: LeaderboardView {
+        view as? LeaderboardView ?? LeaderboardView()
+    }
+    
+
+    override func loadView() {
+        view = LeaderboardView()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    
+        
+    }
+    
+}
+
+

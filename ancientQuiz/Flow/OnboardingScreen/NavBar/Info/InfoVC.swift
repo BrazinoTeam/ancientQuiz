@@ -1,8 +1,28 @@
 //
 //  InfoVC.swift
-//  ancientQuiz
-//
-//  Created by apple on 25.07.2024.
-//
 
 import Foundation
+import UIKit
+import SnapKit
+
+class InfoVC: UIViewController {
+    
+
+    var contentView: InfoView {
+        view as? InfoView ?? InfoView()
+    }
+    
+
+    override func loadView() {
+        view = InfoView()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    
+        
+    }
+    
+}
+
+
