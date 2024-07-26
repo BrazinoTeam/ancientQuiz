@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18D5D21E2C53A8E10012CFD4 /* InfoGodsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D5D21D2C53A8E10012CFD4 /* InfoGodsVC.swift */; };
+		18D5D2202C53A8E60012CFD4 /* InfoGodsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D5D21F2C53A8E60012CFD4 /* InfoGodsView.swift */; };
+		18D5D2222C53A8FB0012CFD4 /* QuizGodsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D5D2212C53A8FB0012CFD4 /* QuizGodsVC.swift */; };
+		18D5D2242C53A8FF0012CFD4 /* QuizGodsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D5D2232C53A8FF0012CFD4 /* QuizGodsView.swift */; };
+		18D5D2262C53A90F0012CFD4 /* jsonData.json in Resources */ = {isa = PBXBuildFile; fileRef = 18D5D2252C53A90F0012CFD4 /* jsonData.json */; };
+		18D5D2282C53A9380012CFD4 /* GodsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D5D2272C53A9380012CFD4 /* GodsModel.swift */; };
 		18F790312C5279DB00ED195E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F790302C5279DB00ED195E /* AppDelegate.swift */; };
 		18F790332C5279DB00ED195E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F790322C5279DB00ED195E /* SceneDelegate.swift */; };
 		18F7903A2C5279DD00ED195E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F790392C5279DD00ED195E /* Assets.xcassets */; };
@@ -32,6 +38,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18D5D21D2C53A8E10012CFD4 /* InfoGodsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoGodsVC.swift; sourceTree = "<group>"; };
+		18D5D21F2C53A8E60012CFD4 /* InfoGodsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoGodsView.swift; sourceTree = "<group>"; };
+		18D5D2212C53A8FB0012CFD4 /* QuizGodsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizGodsVC.swift; sourceTree = "<group>"; };
+		18D5D2232C53A8FF0012CFD4 /* QuizGodsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizGodsView.swift; sourceTree = "<group>"; };
+		18D5D2252C53A90F0012CFD4 /* jsonData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = jsonData.json; sourceTree = "<group>"; };
+		18D5D2272C53A9380012CFD4 /* GodsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GodsModel.swift; sourceTree = "<group>"; };
 		18F7902D2C5279DB00ED195E /* ancientQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ancientQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F790302C5279DB00ED195E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18F790322C5279DB00ED195E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +81,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18D5D21B2C53A8C30012CFD4 /* InfoGods */ = {
+			isa = PBXGroup;
+			children = (
+				18D5D21D2C53A8E10012CFD4 /* InfoGodsVC.swift */,
+				18D5D21F2C53A8E60012CFD4 /* InfoGodsView.swift */,
+				18D5D21C2C53A8D40012CFD4 /* QuizGods */,
+			);
+			path = InfoGods;
+			sourceTree = "<group>";
+		};
+		18D5D21C2C53A8D40012CFD4 /* QuizGods */ = {
+			isa = PBXGroup;
+			children = (
+				18D5D2212C53A8FB0012CFD4 /* QuizGodsVC.swift */,
+				18D5D2232C53A8FF0012CFD4 /* QuizGodsView.swift */,
+				18D5D2272C53A9380012CFD4 /* GodsModel.swift */,
+				18D5D2252C53A90F0012CFD4 /* jsonData.json */,
+			);
+			path = QuizGods;
+			sourceTree = "<group>";
+		};
 		18F790242C5279DB00ED195E = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +167,7 @@
 			children = (
 				18F7904C2C527AE800ED195E /* HomeVC.swift */,
 				18F7904E2C527AED00ED195E /* HomeView.swift */,
+				18D5D21B2C53A8C30012CFD4 /* InfoGods */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -274,6 +308,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18D5D2262C53A90F0012CFD4 /* jsonData.json in Resources */,
 				18F7903A2C5279DD00ED195E /* Assets.xcassets in Resources */,
 				18F7903D2C5279DD00ED195E /* Base in Resources */,
 			);
@@ -290,15 +325,20 @@
 				18F790552C527AFC00ED195E /* BonusVC.swift in Sources */,
 				18F790512C527AF300ED195E /* ProfileVC.swift in Sources */,
 				18F790652C527B2E00ED195E /* OnboardingScreenView.swift in Sources */,
+				18D5D2202C53A8E60012CFD4 /* InfoGodsView.swift in Sources */,
 				18F790732C527EED00ED195E /* Font + Extension.swift in Sources */,
 				18F7905D2C527B1200ED195E /* InfoVC.swift in Sources */,
 				18F7905F2C527B1600ED195E /* InfoView.swift in Sources */,
+				18D5D2282C53A9380012CFD4 /* GodsModel.swift in Sources */,
 				18F790592C527B0700ED195E /* LeaderboardVC.swift in Sources */,
+				18D5D2242C53A8FF0012CFD4 /* QuizGodsView.swift in Sources */,
 				18F7904D2C527AE800ED195E /* HomeVC.swift in Sources */,
+				18D5D2222C53A8FB0012CFD4 /* QuizGodsVC.swift in Sources */,
 				18F790312C5279DB00ED195E /* AppDelegate.swift in Sources */,
 				18F7905B2C527B0B00ED195E /* LeaderboardView.swift in Sources */,
 				18F7906E2C527E8A00ED195E /* Settings.swift in Sources */,
 				18F790632C527B2A00ED195E /* OnboardingScreenVC.swift in Sources */,
+				18D5D21E2C53A8E10012CFD4 /* InfoGodsVC.swift in Sources */,
 				18F7904F2C527AED00ED195E /* HomeView.swift in Sources */,
 				18F790612C527B1F00ED195E /* NavBar.swift in Sources */,
 				18F790532C527AF700ED195E /* ProfileView.swift in Sources */,

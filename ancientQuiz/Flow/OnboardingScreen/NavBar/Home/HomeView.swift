@@ -14,7 +14,6 @@ class HomeView: UIView {
         return imageView
     }()
     
-    
     private (set) var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "home".uppercased()
@@ -23,7 +22,6 @@ class HomeView: UIView {
         label.textAlignment = .center
         return label
     }()
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)

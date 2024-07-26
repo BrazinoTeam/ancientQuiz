@@ -1,0 +1,2225 @@
+
+{
+    "gods": [
+        {
+            "id": 0,
+            "name": "Ra",
+            "photoName": "cat1",
+            "info": "catinfo1",
+            "infoDurationMinutes": 10,
+            "quiz": {
+                "quizDurationMinutes": 5,
+                "questions": [
+                    {
+                        "question": "What animal head is Ra typically depicted with?",
+                        "variants": [
+                            {
+                                "text": "Cat",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Falcon",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Jackal",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Ibis",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What is the name of Ra's solar barque during the day?",
+                        "variants": [
+                            {
+                                "text": "Mandjet",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Mesektet",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Sun Boa",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Solar Ark",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What form does Ra take during his nightly journey through the underworld?",
+                        "variants": [
+                            {
+                                "text": "Falcon-headed man",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Ram-headed man",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Jackal-headed man",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Cat-headed man",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "Who is Ra's main adversary in the underworld?",
+                        "variants": [
+                            {
+                                "text": "Set",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Apophis",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Osiris",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Anubis",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What is the significance of the obelisks in Ra's worship?",
+                        "variants": [
+                            {
+                                "text": "They symbolize the Nile",
+                                "isRight": false
+                            },
+                            {
+                                "text": "They symbolize Ra's rays",
+                                "isRight": true
+                            },
+                            {
+                                "text": "They symbolize the moon",
+                                "isRight": false
+                            },
+                            {
+                                "text": "They symbolize Ra's barque",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "Which city was the major center of Ra's worship?",
+                        "variants": [
+                            {
+                                "text": "Memphis",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Thebes",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Heliopolis",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Abydos",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What merged deity became significant during the New Kingdom period?",
+                        "variants": [
+                            {
+                                "text": "Osiris-Ra",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Set-Ra",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Anubis-Ra",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Amun-Ra",
+                                "isRight": true
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What do the Pyramid Texts, Coffin Texts, and the Book of the Dead have in common regarding Ra?",
+                        "variants": [
+                            {
+                                "text": "They exclude Ra",
+                                "isRight": false
+                            },
+                            {
+                                "text": "They include hymns and spells invoking Ra",
+                                "isRight": true
+                            },
+                            {
+                                "text": "They depict Ra as an evil god",
+                                "isRight": false
+                            },
+                            {
+                                "text": "They focus solely on Osiris",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What attribute is commonly associated with Ra in artistic representations?",
+                        "variants": [
+                            {
+                                "text": "Scepter",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Ankh",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Sun disk encircled by a cobra",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Feather of Ma'at",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "How did Ra's worship change over time?",
+                        "variants": [
+                            {
+                                "text": "It disappeared entirely",
+                                "isRight": false
+                            },
+                            {
+                                "text": "It remained the same throughout history",
+                                "isRight": false
+                            },
+                            {
+                                "text": "It evolved and merged with other deities",
+                                "isRight": true
+                            },
+                            {
+                                "text": "It was only significant in the Old Kingdom",
+                                "isRight": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "id": 1,
+            "name": "Osiris",
+            "photoName": "cat2",
+            "info": "",
+            "infoDurationMinutes": 10,
+            "quiz": {
+                "quizDurationMinutes": 5,
+                "questions": [
+                    {
+                        "question": "Who is Osiris's wife in Egyptian mythology?",
+                        "variants": [
+                            {
+                                "text": "Nephthys",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Isis",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Ma'at",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Hathor",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What symbols does Osiris hold in his hands?",
+                        "variants": [
+                            {
+                                "text": "Ankh and scepter",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Crook and flail",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Feather and rod",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Staff and orb",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "Who killed Osiris according to Egyptian myth?",
+                        "variants": [
+                            {
+                                "text": "Horus",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Anubis",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Set",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Ra",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "How many pieces was Osiris's body divided into by Set?",
+                        "variants": [
+                            {
+                                "text": "7",
+                                "isRight": false
+                            },
+                            {
+                                "text": "12",
+                                "isRight": false
+                            },
+                            {
+                                "text": "14",
+                                "isRight": true
+                            },
+                            {
+                                "text": "21",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What is the significance of Osiris's green skin?",
+                        "variants": [
+                            {
+                                "text": "Wisdom",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Royalty",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Rebirth and fertility",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Power",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What ceremony symbolized the judgment of the dead in the afterlife?",
+                        "variants": [
+                            {
+                                "text": "The Weighing of the Heart",
+                                "isRight": true
+                            },
+                            {
+                                "text": "The Ritual of the Crook",
+                                "isRight": false
+                            },
+                            {
+                                "text": "The Festival of Lights",
+                                "isRight": false
+                            },
+                            {
+                                "text": "The Reading of the Book of the Dead",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What happens if the deceased's heart is heavier than the feather of Ma'at?",
+                        "variants": [
+                            {
+                                "text": "They are reincarnated",
+                                "isRight": false
+                            },
+                            {
+                                "text": "They enter paradise",
+                                "isRight": false
+                            },
+                            {
+                                "text": "They are devoured by Ammit",
+                                "isRight": true
+                            },
+                            {
+                                "text": "They become a god",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "Where was a major center of worship for Osiris?",
+                        "variants": [
+                            {
+                                "text": "Thebes",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Abydos",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Memphis",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Heliopolis",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "Who assists Isis in reassembling Osiris's body?",
+                        "variants": [
+                            {
+                                "text": "Thoth and Horus",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Nephthys, Anubis, and Thoth",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Ra and Ma'at",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Set and Ammit",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What annual festival celebrated Osiris's death and resurrection?",
+                        "variants": [
+                            {
+                                "text": "The Festival of Ra",
+                                "isRight": false
+                            },
+                            {
+                                "text": "The Passion of Osiris",
+                                "isRight": true
+                            },
+                            {
+                                "text": "The Harvest Festival",
+                                "isRight": false
+                            },
+                            {
+                                "text": "The Festival of the Nile",
+                                "isRight": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "id": 2,
+            "name": "Isis",
+            "photoName": "cat2",
+            "info": "",
+            "infoDurationMinutes": 10,
+            "quiz": {
+                "quizDurationMinutes": 5,
+                "questions": [
+                    {
+                        "question": "What is Isis often depicted with on her head?",
+                        "variants": [
+                            {
+                                "text": "Sun disk and cow horns",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Feather and staff",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Ankh and scepter",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Crook and flail",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "Who is Isis's husband in Egyptian mythology?",
+                        "variants": [
+                            {
+                                "text": "Ra",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Set",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Osiris",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Horus",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What role does Isis play in Osiris's resurrection?",
+                        "variants": [
+                            {
+                                "text": "She finds his body",
+                                "isRight": false
+                            },
+                            {
+                                "text": "She uses magic to restore him",
+                                "isRight": false
+                            },
+                            {
+                                "text": "She protects him from Set",
+                                "isRight": false
+                            },
+                            {
+                                "text": "All of the above",
+                                "isRight": true
+                            }
+                        ]
+                    },
+                    {
+                        "question": "Who is Isis's son?",
+                        "variants": [
+                            {
+                                "text": "Anubis",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Horus",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Thoth",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Geb",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What type of rituals were performed by Isis's priests and priestesses?",
+                        "variants": [
+                            {
+                                "text": "Healing rituals",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Protection rituals",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Fertility rituals",
+                                "isRight": false
+                            },
+                            {
+                                "text": "All of the above",
+                                "isRight": true
+                            }
+                        ]
+                    },
+                    {
+                        "question": "Which temple is a major center of worship for Isis?",
+                        "variants": [
+                            {
+                                "text": "Philae",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Karnak",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Luxor",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Heliopolis",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What festival celebrated Isis's role in bringing light and life?",
+                        "variants": [
+                            {
+                                "text": "Navigium Isidis",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Feast of the Lights",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Festival of Osiris",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Festival of the Nile",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "How did Isis's worship spread beyond Egypt?",
+                        "variants": [
+                            {
+                                "text": "Through trade",
+                                "isRight": false
+                            },
+                            {
+                                "text": "During the Hellenistic period",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Through Roman conquest",
+                                "isRight": false
+                            },
+                            {
+                                "text": "All of the above",
+                                "isRight": true
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What is a common symbol associated with Isis?",
+                        "variants": [
+                            {
+                                "text": "The ankh",
+                                "isRight": false
+                            },
+                            {
+                                "text": "The scepter",
+                                "isRight": false
+                            },
+                            {
+                                "text": "The throne-shaped crown",
+                                "isRight": true
+                            },
+                            {
+                                "text": "The crook",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What type of goddess is Isis often considered?",
+                        "variants": [
+                            {
+                                "text": "Goddess of the underworld",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Goddess of war",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Goddess of magic and motherhood",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Goddess of the sun",
+                                "isRight": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "id": 3,
+            "name": "Horus",
+            "photoName": "cat2",
+            "info": "",
+            "infoDurationMinutes": 10,
+            "quiz": {
+                "quizDurationMinutes": 5,
+                "questions": [
+                    {
+                        "question": "What animal is Horus often depicted as?",
+                        "variants": [
+                            {
+                                "text": "Cat",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Falcon",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Jackal",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Ibis",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "Who are Horus's parents in Egyptian mythology?",
+                        "variants": [
+                            {
+                                "text": "Ra and Hathor",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Osiris and Isis",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Set and Nephthys",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Geb and Nut",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What does the Eye of Horus symbolize?",
+                        "variants": [
+                            {
+                                "text": "Wealth",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Protection, healing, and restoration",
+                                "isRight": true
+                            },
+                            {
+                                "text": "War and destruction",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Chaos",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What is the name of the temple dedicated to Horus at Edfu?",
+                        "variants": [
+                            {
+                                "text": "Temple of Karnak",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Temple of Luxor",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Temple of Horus",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Temple of Dendera",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "Who is Horus's main adversary in Egyptian mythology?",
+                        "variants": [
+                            {
+                                "text": "Anubis",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Ra",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Set",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Thoth",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What does Horus's right eye represent?",
+                        "variants": [
+                            {
+                                "text": "The moon",
+                                "isRight": false
+                            },
+                            {
+                                "text": "The sun",
+                                "isRight": true
+                            },
+                            {
+                                "text": "The stars",
+                                "isRight": false
+                            },
+                            {
+                                "text": "The underworld",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "How is the pharaoh associated with Horus?",
+                        "variants": [
+                            {
+                                "text": "The pharaoh is considered the Living Horus",
+                                "isRight": true
+                            },
+                            {
+                                "text": "The pharaoh is Horus's father",
+                                "isRight": false
+                            },
+                            {
+                                "text": "The pharaoh is Horus's brother",
+                                "isRight": false
+                            },
+                            {
+                                "text": "The pharaoh is Horus's priest",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "Where did Horus grow up in secret to protect him from Set?",
+                        "variants": [
+                            {
+                                "text": "Thebes",
+                                "isRight": false
+                            },
+                            {
+                                "text": "The desert",
+                                "isRight": false
+                            },
+                            {
+                                "text": "The marshes of the Nile Delta",
+                                "isRight": true
+                            },
+                            {
+                                "text": "The mountains",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What symbol is often worn by pharaohs to represent Horus?",
+                        "variants": [
+                            {
+                                "text": "Ankh",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Scepter",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Horus falcon crown",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Crook and flail",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What narrative is detailed in the Contendings of Horus and Set?",
+                        "variants": [
+                            {
+                                "text": "Horus's birth",
+                                "isRight": false
+                            },
+                            {
+                                "text": "The creation of the world",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Horus's struggles and ultimate victory over Set",
+                                "isRight": true
+                            },
+                            {
+                                "text": "The building of the pyramids",
+                                "isRight": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "id": 4,
+            "name": "Anubis",
+            "photoName": "cat2",
+            "info": "",
+            "infoDurationMinutes": 10,
+            "quiz": {
+                "quizDurationMinutes": 5,
+                "questions": [
+                    {
+                        "question": "What animal is Anubis often depicted as?",
+                        "variants": [
+                            {
+                                "text": "Cat",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Falcon",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Jackal",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Ibis",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What is Anubis's primary role in Egyptian mythology?",
+                        "variants": [
+                            {
+                                "text": "God of the sun",
+                                "isRight": false
+                            },
+                            {
+                                "text": "God of the Nile",
+                                "isRight": false
+                            },
+                            {
+                                "text": "God of mummification and the afterlife",
+                                "isRight": true
+                            },
+                            {
+                                "text": "God of war",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "Who are Anubis's parents according to Egyptian mythology?",
+                        "variants": [
+                            {
+                                "text": "Ra and Hathor",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Osiris and Nephthys",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Set and Isis",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Geb and Nut",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What ceremony does Anubis preside over in the afterlife?",
+                        "variants": [
+                            {
+                                "text": "Opening of the Mouth",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Festival of Osiris",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Weighing of the Heart",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Navigium Isidis",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What happens if the heart is heavier than the feather of Ma'at?",
+                        "variants": [
+                            {
+                                "text": "The soul is reincarnated",
+                                "isRight": false
+                            },
+                            {
+                                "text": "The soul enters paradise",
+                                "isRight": false
+                            },
+                            {
+                                "text": "The soul is devoured by Ammit",
+                                "isRight": true
+                            },
+                            {
+                                "text": "The soul becomes a star",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "Which texts include prayers and spells to Anubis?",
+                        "variants": [
+                            {
+                                "text": "Pyramid Texts",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Coffin Texts",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Book of the Dead",
+                                "isRight": false
+                            },
+                            {
+                                "text": "All of the above",
+                                "isRight": true
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What color is Anubis often depicted with, symbolizing death and rebirth?",
+                        "variants": [
+                            {
+                                "text": "Red",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Black",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Gold",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Blue",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What role did Anubis play in the resurrection of Osiris?",
+                        "variants": [
+                            {
+                                "text": "He found Osiris's body",
+                                "isRight": false
+                            },
+                            {
+                                "text": "He used magic to restore Osiris",
+                                "isRight": false
+                            },
+                            {
+                                "text": "He assisted in the embalming and reassembly of Osiris's body",
+                                "isRight": true
+                            },
+                            {
+                                "text": "He protected Osiris from Set",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What creature devours the heart if it is heavier than the feather of Ma'at?",
+                        "variants": [
+                            {
+                                "text": "Horus",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Anubis",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Ammit",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Thoth",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "Why is Anubis depicted as a jackal?",
+                        "variants": [
+                            {
+                                "text": "Jackals are nocturnal and protect tombs",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Jackals are sacred animals",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Jackals symbolize power and wisdom",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Jackals are associated with the Nile",
+                                "isRight": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "id": 5,
+            "name": "Set",
+            "photoName": "cat2",
+            "info": "",
+            "infoDurationMinutes": 10,
+            "quiz": {
+                "quizDurationMinutes": 5,
+                "questions": [
+                    {
+                        "question": "What creature is Set often depicted with the head of?",
+                        "variants": [
+                            {
+                                "text": "Falcon",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Jackal",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Set animal",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Ibis",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "Who did Set murder to usurp the throne of Egypt?",
+                        "variants": [
+                            {
+                                "text": "Ra",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Horus",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Osiris",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Anubis",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What is the Contendings of Horus and Set about?",
+                        "variants": [
+                            {
+                                "text": "The creation of the world",
+                                "isRight": false
+                            },
+                            {
+                                "text": "The conflict between Horus and Set for the throne of Egypt",
+                                "isRight": true
+                            },
+                            {
+                                "text": "The building of the pyramids",
+                                "isRight": false
+                            },
+                            {
+                                "text": "The adventures of Ra",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "How does Set protect Ra during his nightly journey?",
+                        "variants": [
+                            {
+                                "text": "By casting spells",
+                                "isRight": false
+                            },
+                            {
+                                "text": "By standing at the prow of Ra's solar barque and defending it from Apophis",
+                                "isRight": true
+                            },
+                            {
+                                "text": "By providing light",
+                                "isRight": false
+                            },
+                            {
+                                "text": "By guiding Ra's barque",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "Where was Set's major cult center located?",
+                        "variants": [
+                            {
+                                "text": "Thebes",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Heliopolis",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Ombos (Naqada)",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Abydos",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What is the primary symbolism of the Set animal?",
+                        "variants": [
+                            {
+                                "text": "Order and justice",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Chaos and protection",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Wisdom and knowledge",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Love and fertility",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What role did Set play in Osiris's resurrection?",
+                        "variants": [
+                            {
+                                "text": "He helped reassemble Osiris's body",
+                                "isRight": false
+                            },
+                            {
+                                "text": "He protected Osiris from Horus",
+                                "isRight": false
+                            },
+                            {
+                                "text": "He murdered Osiris and scattered his body parts",
+                                "isRight": true
+                            },
+                            {
+                                "text": "He revived Osiris with magic",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What did Set represent in later periods of Egyptian history?",
+                        "variants": [
+                            {
+                                "text": "Wisdom and peace",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Foreign invaders and chaos",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Love and fertility",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Agriculture and harvest",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What universal themes are reflected in Set's mythology?",
+                        "variants": [
+                            {
+                                "text": "Wealth and power",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Conflict, balance, and the duality of creation and destruction",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Love and romance",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Exploration and discovery",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "Who were Set's primary adversaries in Egyptian mythology?",
+                        "variants": [
+                            {
+                                "text": "Ra and Hathor",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Osiris and Horus",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Anubis and Thoth",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Geb and Nut",
+                                "isRight": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "id": 6,
+            "name": "Thoth",
+            "photoName": "cat2",
+            "info": "",
+            "infoDurationMinutes": 10,
+            "quiz": {
+                "quizDurationMinutes": 5,
+                "questions": [
+                    {
+                        "question": "What animal head is Thoth often depicted with?",
+                        "variants": [
+                            {
+                                "text": "Cat",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Falcon",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Ibis",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Jackal",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What is Thoth's primary role in Egyptian mythology?",
+                        "variants": [
+                            {
+                                "text": "God of the sun",
+                                "isRight": false
+                            },
+                            {
+                                "text": "God of the Nile",
+                                "isRight": false
+                            },
+                            {
+                                "text": "God of wisdom, writing, and magic",
+                                "isRight": true
+                            },
+                            {
+                                "text": "God of war",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "Who did Thoth assist in the resurrection of Osiris?",
+                        "variants": [
+                            {
+                                "text": "Ra",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Anubis and Isis",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Set and Nephthys",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Horus and Hathor",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What ceremony does Thoth record in the afterlife?",
+                        "variants": [
+                            {
+                                "text": "Opening of the Mouth",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Festival of Osiris",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Weighing of the Heart",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Navigium Isidis",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What invention is Thoth credited with in Egyptian mythology?",
+                        "variants": [
+                            {
+                                "text": "Agriculture",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Writing and hieroglyphs",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Architecture",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Medicine",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "Which Greek god is Thoth identified with?",
+                        "variants": [
+                            {
+                                "text": "Zeus",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Apollo",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Hermes",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Ares",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What bird is sacred to Thoth?",
+                        "variants": [
+                            {
+                                "text": "Falcon",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Ibis",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Owl",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Sparrow",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What is the House of Life associated with Thoth?",
+                        "variants": [
+                            {
+                                "text": "A place of worship",
+                                "isRight": false
+                            },
+                            {
+                                "text": "A repository of knowledge and training ground for scribes",
+                                "isRight": true
+                            },
+                            {
+                                "text": "A burial ground",
+                                "isRight": false
+                            },
+                            {
+                                "text": "A marketplace",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What tradition emerged from the identification of Thoth with Hermes?",
+                        "variants": [
+                            {
+                                "text": "Egyptian mythology",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Greek mythology",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Hermetic tradition",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Roman mythology",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What animal form represents Thoth's intelligence and reflection?",
+                        "variants": [
+                            {
+                                "text": "Cat",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Baboon",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Falcon",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Jackal",
+                                "isRight": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "id": 7,
+            "name": "Ma'at",
+            "photoName": "cat2",
+            "info": "",
+            "infoDurationMinutes": 10,
+            "quiz": {
+                "quizDurationMinutes": 5,
+                "questions": [
+                    {
+                        "question": "What is Ma'at often depicted with on her head?",
+                        "variants": [
+                            {
+                                "text": "Sun disk",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Feather of truth",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Serpent",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Crown of Osiris",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What is Ma'at's primary role in Egyptian mythology?",
+                        "variants": [
+                            {
+                                "text": "Goddess of the sun",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Goddess of the Nile",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Goddess of truth, justice, and cosmic order",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Goddess of war",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "Who does Ma'at accompany on his daily journey across the sky?",
+                        "variants": [
+                            {
+                                "text": "Osiris",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Anubis",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Ra",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Horus",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What ceremony does Ma'at's feather play a crucial role in?",
+                        "variants": [
+                            {
+                                "text": "Opening of the Mouth",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Festival of Osiris",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Weighing of the Heart",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Navigium Isidis",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What happens if the heart is heavier than Ma'at's feather?",
+                        "variants": [
+                            {
+                                "text": "The soul is reincarnated",
+                                "isRight": false
+                            },
+                            {
+                                "text": "The soul enters paradise",
+                                "isRight": false
+                            },
+                            {
+                                "text": "The soul is devoured by Ammit",
+                                "isRight": true
+                            },
+                            {
+                                "text": "The soul becomes a star",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "Which text emphasizes the importance of living in accordance with Ma'at's principles?",
+                        "variants": [
+                            {
+                                "text": "Instruction of Ptahhotep",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Coffin Texts",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Book of the Dead",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Pyramid Texts",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What symbol represents Ma'at's authority and life?",
+                        "variants": [
+                            {
+                                "text": "Ankh and scepter",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Crook and flail",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Feather and rod",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Staff and orb",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What concept was central to the legitimacy of the pharaohs' rule?",
+                        "variants": [
+                            {
+                                "text": "Ma'at",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Ka",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Ba",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Sekhem",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What did Ma'at's principles govern in ancient Egyptian society?",
+                        "variants": [
+                            {
+                                "text": "Legal proceedings",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Administrative decisions",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Personal conduct and moral behavior",
+                                "isRight": false
+                            },
+                            {
+                                "text": "All of the above",
+                                "isRight": true
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What does Ma'at's ostrich feather symbolize?",
+                        "variants": [
+                            {
+                                "text": "Wealth",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Power",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Truth, lightness, and balance",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Wisdom",
+                                "isRight": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "id": 8,
+            "name": "Hathor",
+            "photoName": "cat2",
+            "info": "",
+            "infoDurationMinutes": 10,
+            "quiz": {
+                "quizDurationMinutes": 5,
+                "questions": [
+                    {
+                        "question": "What animal is Hathor often depicted as?",
+                        "variants": [
+                            {
+                                "text": "Falcon",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Cat",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Cow",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Jackal",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What is Hathor's primary role in Egyptian mythology?",
+                        "variants": [
+                            {
+                                "text": "Goddess of war",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Goddess of love, beauty, music, and motherhood",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Goddess of the underworld",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Goddess of the Nile",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "Who did Hathor transform into to punish humanity in the Distant Goddess myth?",
+                        "variants": [
+                            {
+                                "text": "Isis",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Ma'at",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Sekhmet",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Nephthys",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What festival commemorates Hathor's pacification and transformation?",
+                        "variants": [
+                            {
+                                "text": "Festival of Osiris",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Festival of Ra",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Festival of Drunkenness",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Festival of Horus",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What is Hathor's sacred musical instrument?",
+                        "variants": [
+                            {
+                                "text": "Harp",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Flute",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Sistrum",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Lyre",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What role does Hathor play in relation to Horus?",
+                        "variants": [
+                            {
+                                "text": "Sister",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Wife",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Mother",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Daughter",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "Which temple is a major center of worship for Hathor?",
+                        "variants": [
+                            {
+                                "text": "Temple of Karnak",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Temple of Luxor",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Temple of Hathor at Dendera",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Temple of Edfu",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "Which Greek goddess is Hathor identified with?",
+                        "variants": [
+                            {
+                                "text": "Hera",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Athena",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Aphrodite",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Artemis",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What symbol represents Hathor's connection to the sky and the sun?",
+                        "variants": [
+                            {
+                                "text": "Ankh",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Crook and flail",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Solar disk and cow horns",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Feather of Ma'at",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What does Hathor's cow symbol primarily represent?",
+                        "variants": [
+                            {
+                                "text": "War and strength",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Fertility, abundance, and maternal care",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Wisdom and knowledge",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Power and authority",
+                                "isRight": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "id": 9,
+            "name": "Bastet",
+            "photoName": "cat10",
+            "info": "catinfo10",
+            "infoDurationMinutes": 10,
+            "quiz": {
+                "quizDurationMinutes": 5,
+                "questions": [
+                    {
+                        "question": "What animal is Bastet often depicted as?",
+                        "variants": [
+                            {
+                                "text": "Falcon",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Cat",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Jackal",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Cow",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What is Bastet's primary role in Egyptian mythology?",
+                        "variants": [
+                            {
+                                "text": "Goddess of war",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Goddess of home, fertility, and cats",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Goddess of the underworld",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Goddess of the Nile",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What festival was held annually in honor of Bastet?",
+                        "variants": [
+                            {
+                                "text": "Festival of Ra",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Festival of Osiris",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Feast of Bubastis",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Festival of Horus",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What is the primary symbol of Bastet's protection and grace?",
+                        "variants": [
+                            {
+                                "text": "Ankh",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Sistrum",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Feather of Ma'at",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Crook and flail",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "Where was Bastet's primary cult center located?",
+                        "variants": [
+                            {
+                                "text": "Thebes",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Memphis",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Bubastis",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Heliopolis",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "Which Greek goddess is Bastet identified with?",
+                        "variants": [
+                            {
+                                "text": "Hera",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Athena",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Artemis",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Aphrodite",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What dual forms does Bastet embody?",
+                        "variants": [
+                            {
+                                "text": "Jackal and ibis",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Cow and lioness",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Cat and lioness",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Falcon and baboon",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What role did cats play in ancient Egyptian households?",
+                        "variants": [
+                            {
+                                "text": "Guardians of the dead",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Protectors against vermin",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Symbols of wealth",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Spiritual guides",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What did ancient Egyptians often do to honor Bastet in their homes?",
+                        "variants": [
+                            {
+                                "text": "Built altars",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Placed statues and amulets of Bastet",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Painted her image on walls",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Buried treasures",
+                                "isRight": false
+                            }
+                        ]
+                    },
+                    {
+                        "question": "What other role is Bastet known for besides being a goddess of home and fertility?",
+                        "variants": [
+                            {
+                                "text": "Goddess of war",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Goddess of the sun",
+                                "isRight": false
+                            },
+                            {
+                                "text": "Eye of Ra",
+                                "isRight": true
+                            },
+                            {
+                                "text": "Goddess of the moon",
+                                "isRight": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}
