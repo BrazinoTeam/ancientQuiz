@@ -4,8 +4,8 @@
 
 import Foundation
 
-struct AirplaneModel: Decodable {
-    struct Airplane: Decodable {
+struct GodsModel: Decodable {
+    struct Gods: Decodable {
         
         struct Quiz: Decodable {
             
@@ -30,22 +30,22 @@ struct AirplaneModel: Decodable {
         var quiz: Quiz
     }
     
-    var airplanes: [Airplane]
+    var gods: [Gods]
 }
 
-extension AirplaneModel {
+extension GodsModel {
     
-    static func getAirplanetFromFile() -> [AirplaneModel.Airplane] {
+    static func getAirplanetFromFile() -> [GodsModel.Gods] {
         guard let url = Bundle.main.url(forResource: "jsonData", withExtension: "json") else {
             return []
         }
         guard let data = try? Data(contentsOf: url) else {
             return []
         }
-        guard let model = try? JSONDecoder().decode(AirplaneModel.self, from: data) else {
+        guard let model = try? JSONDecoder().decode(GodsModel.self, from: data) else {
             return []
         }
-        return model.airplanes
+        return model.gods
     }
     
 }

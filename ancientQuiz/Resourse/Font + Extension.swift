@@ -7,16 +7,11 @@ import UIKit
 extension UIFont {
     
     enum CustomFonts: String {
-        case joti = "JotiOne"
-        case inter = "Inter"
-        case sofia = "SofiaSans"
+        case peralta = "Peralta"
     }
     
     enum CustomFontStyle: String {
         case regular = "-Regular"
-        case bold = "-Bold"
-        case black = "-Black"
-        case light = "-Light"
     }
     
     static func customFont(

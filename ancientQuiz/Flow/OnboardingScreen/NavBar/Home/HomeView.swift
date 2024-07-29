@@ -10,19 +10,49 @@ class HomeView: UIView {
     
     private (set) var bgImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = .bgClassic
+        imageView.image = .bgHome
         return imageView
     }()
     
-    private (set) var titleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "home".uppercased()
-        label.font = UIFont.boldSystemFont(ofSize: 36)
-        label.textColor = .green
+   
+    
+    private (set) var pointCont: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = .imgPointsCont
+        return imageView
+    }()
+    
+    private (set) var pointsLabel: UILabel = {
+        let label = UILabel.createLabel(withText: "\(UD.shared.scorePoints)", font: .customFont(font: .peralta, style: .regular, size: 28), textColor: .white, paragraphSpacing: 1, lineHeightMultiple: 1)
         label.textAlignment = .center
         return label
     }()
     
+    private (set) var pointsImg: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = .imgPoints
+        return imageView
+    }()
+    
+    private(set) lazy var godsCollectionView: UICollectionView = {
+        let layout = createLayout()
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .clear
+        return collectionView
+    }()
+    
+    private (set) var btnOpen: UIButton = {
+        let btn = UIButton()
+        btn.configureButton(withTitle: "Open", font: .customFont(font: .peralta, style: .regular, size: 32), titleColor: .white, normalImage: .btnNormal, highlightedImage: .btnSelect)
+        btn.layer.cornerRadius = 35
+        btn.layer.borderWidth = 5
+        btn.layer.borderColor = UIColor.red.cgColor
+        btn.layer.shadowColor = UIColor(red: 0.976, green: 0.471, blue: 0.216, alpha: 0.5).cgColor
+        btn.layer.shadowOpacity = 1
+        btn.layer.shadowRadius = 20
+        btn.layer.shadowOffset = CGSize(width: 0, height: 2)
+        return btn
+    }()
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
@@ -35,7 +65,9 @@ class HomeView: UIView {
     
     private func setupUI() {
    
-        [bgImage, titleLabel] .forEach(addSubview(_:))
+        [bgImage, pointCont, pointsImg, godsCollectionView, btnOpen] .forEach(addSubview(_:))
+        pointCont.addSubview(pointsLabel)
+
     }
     
     private func setupConstraints() {
@@ -44,9 +76,68 @@ class HomeView: UIView {
             make.edges.equalToSuperview()
         }
         
-        titleLabel.snp.makeConstraints { make in
-            make.center.equalToSuperview()
+        pointCont.snp.makeConstraints { make in
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(32)
+            make.right.equalToSuperview().offset(-56)
         }
+        
+        pointsImg.snp.makeConstraints { make in
+            make.centerY.equalTo(pointCont)
+            make.centerX.equalTo(pointCont.snp.right)
+        }
+        
+        pointsLabel.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.left.equalToSuperview().offset(12)
+            make.width.equalTo(80)
+        }
+        
+        godsCollectionView.snp.makeConstraints { make in
+            make.left.right.equalToSuperview()
+            make.height.equalTo(388.autoSize)
+            make.top.equalTo(pointCont.snp.bottom).offset(48.autoSize)
+        }
+        
+        btnOpen.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(godsCollectionView.snp.bottom).offset(48.autoSize)
+            make.width.equalTo(353)
+            make.height.equalTo(75)
+        }
+    }
+    
+    private func createLayout() -> UICollectionViewLayout {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+        
+        let screenHeight = UIScreen.main.bounds.height
+        
+        // Условие для установки размера группы
+        let groupWidthDimension: NSCollectionLayoutDimension
+        if screenHeight <= 812 {
+            groupWidthDimension = .fractionalWidth(0.70)
+        } else {
+            groupWidthDimension = .fractionalWidth(0.75)
+        }
+        
+        let groupSize = NSCollectionLayoutSize(widthDimension: groupWidthDimension, heightDimension: .fractionalHeight(1.0))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+
+        let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .groupPagingCentered
+        section.visibleItemsInvalidationHandler = { (items, offset, environment) in
+            let center = offset.x + environment.container.contentSize.width / 2
+            items.forEach { item in
+                let distance = abs(center - item.center.x)
+                let normalizedDistance = min(distance / environment.container.contentSize.width, 1.0)
+                let scale = 1 - 0.25 * normalizedDistance
+                item.transform = CGAffineTransform(scaleX: scale, y: scale)
+                item.alpha = 1 - 0.5 * normalizedDistance
+            }
+        }
+
+        return UICollectionViewCompositionalLayout(section: section)
     }
 }
 

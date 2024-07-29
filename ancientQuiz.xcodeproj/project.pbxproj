@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181642D72C579B5400F68824 /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181642D62C579B5400F68824 /* CollectionCell.swift */; };
+		181642D92C57B58E00F68824 /* Peralta-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 181642D82C57B58E00F68824 /* Peralta-Regular.ttf */; };
+		181642DB2C57C6D100F68824 /* QuizOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181642DA2C57C6D100F68824 /* QuizOptionCell.swift */; };
+		181642DF2C57CEF100F68824 /* LoseQuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181642DE2C57CEF100F68824 /* LoseQuizVC.swift */; };
+		181642E12C57CEF500F68824 /* LoseQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181642E02C57CEF500F68824 /* LoseQuizView.swift */; };
+		181642E32C57CEFB00F68824 /* WinQuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181642E22C57CEFB00F68824 /* WinQuizVC.swift */; };
+		181642E52C57CEFF00F68824 /* WinQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181642E42C57CEFF00F68824 /* WinQuizView.swift */; };
 		18D5D21E2C53A8E10012CFD4 /* InfoGodsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D5D21D2C53A8E10012CFD4 /* InfoGodsVC.swift */; };
 		18D5D2202C53A8E60012CFD4 /* InfoGodsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D5D21F2C53A8E60012CFD4 /* InfoGodsView.swift */; };
 		18D5D2222C53A8FB0012CFD4 /* QuizGodsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D5D2212C53A8FB0012CFD4 /* QuizGodsVC.swift */; };
@@ -38,6 +45,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		181642D62C579B5400F68824 /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
+		181642D82C57B58E00F68824 /* Peralta-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Peralta-Regular.ttf"; sourceTree = "<group>"; };
+		181642DA2C57C6D100F68824 /* QuizOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizOptionCell.swift; sourceTree = "<group>"; };
+		181642DE2C57CEF100F68824 /* LoseQuizVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoseQuizVC.swift; sourceTree = "<group>"; };
+		181642E02C57CEF500F68824 /* LoseQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoseQuizView.swift; sourceTree = "<group>"; };
+		181642E22C57CEFB00F68824 /* WinQuizVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinQuizVC.swift; sourceTree = "<group>"; };
+		181642E42C57CEFF00F68824 /* WinQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinQuizView.swift; sourceTree = "<group>"; };
 		18D5D21D2C53A8E10012CFD4 /* InfoGodsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoGodsVC.swift; sourceTree = "<group>"; };
 		18D5D21F2C53A8E60012CFD4 /* InfoGodsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoGodsView.swift; sourceTree = "<group>"; };
 		18D5D2212C53A8FB0012CFD4 /* QuizGodsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizGodsVC.swift; sourceTree = "<group>"; };
@@ -81,6 +95,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		181642DC2C57CEDB00F68824 /* WinQuiz */ = {
+			isa = PBXGroup;
+			children = (
+				181642E22C57CEFB00F68824 /* WinQuizVC.swift */,
+				181642E42C57CEFF00F68824 /* WinQuizView.swift */,
+			);
+			path = WinQuiz;
+			sourceTree = "<group>";
+		};
+		181642DD2C57CEE900F68824 /* LoseQuiz */ = {
+			isa = PBXGroup;
+			children = (
+				181642DE2C57CEF100F68824 /* LoseQuizVC.swift */,
+				181642E02C57CEF500F68824 /* LoseQuizView.swift */,
+			);
+			path = LoseQuiz;
+			sourceTree = "<group>";
+		};
 		18D5D21B2C53A8C30012CFD4 /* InfoGods */ = {
 			isa = PBXGroup;
 			children = (
@@ -97,7 +129,10 @@
 				18D5D2212C53A8FB0012CFD4 /* QuizGodsVC.swift */,
 				18D5D2232C53A8FF0012CFD4 /* QuizGodsView.swift */,
 				18D5D2272C53A9380012CFD4 /* GodsModel.swift */,
+				181642DA2C57C6D100F68824 /* QuizOptionCell.swift */,
 				18D5D2252C53A90F0012CFD4 /* jsonData.json */,
+				181642DD2C57CEE900F68824 /* LoseQuiz */,
+				181642DC2C57CEDB00F68824 /* WinQuiz */,
 			);
 			path = QuizGods;
 			sourceTree = "<group>";
@@ -167,6 +202,7 @@
 			children = (
 				18F7904C2C527AE800ED195E /* HomeVC.swift */,
 				18F7904E2C527AED00ED195E /* HomeView.swift */,
+				181642D62C579B5400F68824 /* CollectionCell.swift */,
 				18D5D21B2C53A8C30012CFD4 /* InfoGods */,
 			);
 			path = Home;
@@ -240,6 +276,7 @@
 		18F790742C527F5600ED195E /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				181642D82C57B58E00F68824 /* Peralta-Regular.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -311,6 +348,7 @@
 				18D5D2262C53A90F0012CFD4 /* jsonData.json in Resources */,
 				18F7903A2C5279DD00ED195E /* Assets.xcassets in Resources */,
 				18F7903D2C5279DD00ED195E /* Base in Resources */,
+				181642D92C57B58E00F68824 /* Peralta-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,11 +365,15 @@
 				18F790652C527B2E00ED195E /* OnboardingScreenView.swift in Sources */,
 				18D5D2202C53A8E60012CFD4 /* InfoGodsView.swift in Sources */,
 				18F790732C527EED00ED195E /* Font + Extension.swift in Sources */,
+				181642E32C57CEFB00F68824 /* WinQuizVC.swift in Sources */,
 				18F7905D2C527B1200ED195E /* InfoVC.swift in Sources */,
+				181642E52C57CEFF00F68824 /* WinQuizView.swift in Sources */,
 				18F7905F2C527B1600ED195E /* InfoView.swift in Sources */,
+				181642E12C57CEF500F68824 /* LoseQuizView.swift in Sources */,
 				18D5D2282C53A9380012CFD4 /* GodsModel.swift in Sources */,
 				18F790592C527B0700ED195E /* LeaderboardVC.swift in Sources */,
 				18D5D2242C53A8FF0012CFD4 /* QuizGodsView.swift in Sources */,
+				181642DB2C57C6D100F68824 /* QuizOptionCell.swift in Sources */,
 				18F7904D2C527AE800ED195E /* HomeVC.swift in Sources */,
 				18D5D2222C53A8FB0012CFD4 /* QuizGodsVC.swift in Sources */,
 				18F790312C5279DB00ED195E /* AppDelegate.swift in Sources */,
@@ -340,9 +382,11 @@
 				18F790632C527B2A00ED195E /* OnboardingScreenVC.swift in Sources */,
 				18D5D21E2C53A8E10012CFD4 /* InfoGodsVC.swift in Sources */,
 				18F7904F2C527AED00ED195E /* HomeView.swift in Sources */,
+				181642D72C579B5400F68824 /* CollectionCell.swift in Sources */,
 				18F790612C527B1F00ED195E /* NavBar.swift in Sources */,
 				18F790532C527AF700ED195E /* ProfileView.swift in Sources */,
 				18F790712C527EDE00ED195E /* Double + Extension.swift in Sources */,
+				181642DF2C57CEF100F68824 /* LoseQuizVC.swift in Sources */,
 				18F790762C527F8B00ED195E /* UD.swift in Sources */,
 				18F790332C5279DB00ED195E /* SceneDelegate.swift in Sources */,
 			);
@@ -490,6 +534,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ancientQuiz/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs a camera so that the user can take profile pictures";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires a camera so that the user can take a profile photo from the library";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -520,6 +566,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ancientQuiz/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs a camera so that the user can take profile pictures";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires a camera so that the user can take a profile photo from the library";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

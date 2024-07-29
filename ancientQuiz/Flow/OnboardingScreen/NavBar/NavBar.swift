@@ -29,17 +29,14 @@ final class NavBar: UITabBarController {
         $0.axis = .horizontal
         $0.distribution = .equalSpacing
         $0.alignment = .center
-        $0.backgroundColor = .gray
-        $0.frame = CGRect(x: 0, y: view.frame.height - 78.autoSize, width: view.frame.width, height: 78.autoSize)
-        $0.layer.shadowColor = UIColor.black.withAlphaComponent(0.6).cgColor
-        $0.layer.shadowOpacity = 1
-        $0.layer.shadowRadius = 12
-        $0.layer.shadowOffset = CGSize(width: 0, height: -4)
+        $0.frame = CGRect(x: 0, y: view.frame.height - 133.autoSize, width: view.frame.width, height: 133.autoSize)
         $0.addArrangedSubview(btn1)
         $0.addArrangedSubview(btn2)
         $0.addArrangedSubview(btn3)
         $0.addArrangedSubview(btn4)
         $0.addArrangedSubview(btn5)
+        $0.layer.cornerRadius = 45
+        $0.clipsToBounds = true
         return $0
     }(UIStackView())
     
@@ -53,6 +50,16 @@ final class NavBar: UITabBarController {
         setViewControllers([home, profile ,bonus, rating, info], animated: true)
         selectedViewController = home
         updateSelectedButton(0)
+        addGradientLayer(to: customBar)
+    }
+    
+    private func addGradientLayer(to view: UIView) {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [UIColor.cTabOne.cgColor, UIColor.cTabTwo.cgColor]
+        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
+        gradientLayer.frame = view.bounds
+        view.layer.insertSublayer(gradientLayer, at: 0)
     }
     
     private func getButton(icon: String, selectedIcon: String, tag: Int, action: UIAction) -> UIButton {
