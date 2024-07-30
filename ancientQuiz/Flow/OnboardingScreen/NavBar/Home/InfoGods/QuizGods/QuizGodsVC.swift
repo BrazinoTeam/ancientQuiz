@@ -80,7 +80,6 @@ class InfoQuizVC: UIViewController {
         if isCorrect {
             isRightCountAnswers += 1
             cointsAnswers += 10
-            UD.shared.scorePoints += 10
         }
         
         if let selectedCell = contentView.collectionView.cellForItem(at: selectedIndexPath) as? QuizOptionCell {
@@ -214,6 +213,7 @@ class InfoQuizVC: UIViewController {
     
     private func goToWin() {
         let vc = WinQuizVC()
+        vc.winnerGods = godsIndex
         navigationController?.pushViewController(vc, animated: true)
     }
     

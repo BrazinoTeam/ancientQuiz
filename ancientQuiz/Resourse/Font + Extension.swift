@@ -55,6 +55,32 @@ extension UILabel {
     }
 }
 
+extension UILabel {
+    func setGradientText(colors: [UIColor]) {
+        // Обновляем layout, чтобы получить правильные размеры
+        self.layoutIfNeeded()
+
+        // Убеждаемся, что размеры ненулевые
+        guard self.bounds.size != .zero else { return }
+
+        // Создаем CAGradientLayer
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = self.bounds
+        gradientLayer.colors = colors.map { $0.cgColor }
+        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
+
+        // Создаем image из gradient layer используя UIGraphicsImageRenderer
+        let renderer = UIGraphicsImageRenderer(bounds: gradientLayer.bounds)
+        let gradientImage = renderer.image { context in
+            gradientLayer.render(in: context.cgContext)
+        }
+
+        // Устанавливаем gradient image как текстовый цвет
+        self.textColor = UIColor(patternImage: gradientImage)
+    }
+}
+
 extension UIButton {
     func configureButton(withTitle title: String, font: UIFont, titleColor: UIColor, normalImage: UIImage?, highlightedImage: UIImage?, kern: CGFloat = 0.0) {
         self.setBackgroundImage(normalImage, for: .normal)
@@ -76,28 +102,4 @@ extension UIButton {
     }
 }
 
-extension UIImageView {
-    func saveImageToLocal(image: UIImage, userID: String) {
-        if let data = image.jpegData(compressionQuality: 1.0) {
-            let fileURL = getDocumentsDirectory().appendingPathComponent("\(userID).png")
-            try? data.write(to: fileURL)
-        }
-    }
-    
-    func getImageFromLocal(userID: String) -> UIImage? {
-        let fileURL = getDocumentsDirectory().appendingPathComponent("\(userID).png")
-        do {
-            let data = try Data(contentsOf: fileURL)
-            return UIImage(data: data)
-        } catch {
-            print("Error loading image from local storage")
-            return nil
-        }
-    }
-    
-    private func getDocumentsDirectory() -> URL {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        return paths[0]
-    }
-}
 

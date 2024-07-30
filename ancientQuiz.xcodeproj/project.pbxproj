@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18143BBA2C58F8550079F8CA /* AchivView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18143BB92C58F8550079F8CA /* AchivView.swift */; };
+		18143BBC2C591EED0079F8CA /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18143BBB2C591EED0079F8CA /* CircularProgressView.swift */; };
 		181642D72C579B5400F68824 /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181642D62C579B5400F68824 /* CollectionCell.swift */; };
 		181642D92C57B58E00F68824 /* Peralta-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 181642D82C57B58E00F68824 /* Peralta-Regular.ttf */; };
 		181642DB2C57C6D100F68824 /* QuizOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181642DA2C57C6D100F68824 /* QuizOptionCell.swift */; };
@@ -45,6 +47,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18143BB92C58F8550079F8CA /* AchivView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchivView.swift; sourceTree = "<group>"; };
+		18143BBB2C591EED0079F8CA /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		181642D62C579B5400F68824 /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		181642D82C57B58E00F68824 /* Peralta-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Peralta-Regular.ttf"; sourceTree = "<group>"; };
 		181642DA2C57C6D100F68824 /* QuizOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizOptionCell.swift; sourceTree = "<group>"; };
@@ -213,6 +217,7 @@
 			children = (
 				18F790502C527AF300ED195E /* ProfileVC.swift */,
 				18F790522C527AF700ED195E /* ProfileView.swift */,
+				18143BB92C58F8550079F8CA /* AchivView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -240,6 +245,7 @@
 			children = (
 				18F790542C527AFC00ED195E /* BonusVC.swift */,
 				18F790562C527B0000ED195E /* BonusView.swift */,
+				18143BBB2C591EED0079F8CA /* CircularProgressView.swift */,
 			);
 			path = Bonus;
 			sourceTree = "<group>";
@@ -376,6 +382,7 @@
 				181642DB2C57C6D100F68824 /* QuizOptionCell.swift in Sources */,
 				18F7904D2C527AE800ED195E /* HomeVC.swift in Sources */,
 				18D5D2222C53A8FB0012CFD4 /* QuizGodsVC.swift in Sources */,
+				18143BBA2C58F8550079F8CA /* AchivView.swift in Sources */,
 				18F790312C5279DB00ED195E /* AppDelegate.swift in Sources */,
 				18F7905B2C527B0B00ED195E /* LeaderboardView.swift in Sources */,
 				18F7906E2C527E8A00ED195E /* Settings.swift in Sources */,
@@ -384,6 +391,7 @@
 				18F7904F2C527AED00ED195E /* HomeView.swift in Sources */,
 				181642D72C579B5400F68824 /* CollectionCell.swift in Sources */,
 				18F790612C527B1F00ED195E /* NavBar.swift in Sources */,
+				18143BBC2C591EED0079F8CA /* CircularProgressView.swift in Sources */,
 				18F790532C527AF700ED195E /* ProfileView.swift in Sources */,
 				18F790712C527EDE00ED195E /* Double + Extension.swift in Sources */,
 				181642DF2C57CEF100F68824 /* LoseQuizVC.swift in Sources */,
