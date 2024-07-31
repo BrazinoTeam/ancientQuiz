@@ -16,17 +16,17 @@ class ProfileView: UIView, UITextFieldDelegate {
         return label
     }()
     
-    private (set) var containerProfile: UIView = {
-        let view = UIView()
-        view.layer.cornerRadius = 20
-        view.layer.masksToBounds = true
-        return view
+    private (set) var containerProfile: UIImageView = {
+        let img = UIImageView()
+        img.image = .imgContUserName
+        img.contentMode = .scaleToFill
+        return img
     }()
     
     private(set) var btnUserPhoto: UIButton = {
         let btn = UIButton()
         btn.setBackgroundImage(.imgUserProfile, for: .normal)
-        btn.layer.cornerRadius = 24
+        btn.layer.cornerRadius = 5
         btn.clipsToBounds = true
         return btn
     }()
@@ -151,57 +151,57 @@ class ProfileView: UIView, UITextFieldDelegate {
     }()
     
     private (set) var achivOne: AchivView = {
-        let view = AchivView(frame: .zero, image: .imgGodsOne, titleText: "Sun God Expert")
+        let view = AchivView(frame: .zero, image: .imgAchiOne)
         return view
     }()
     
     private (set) var achivTwo: AchivView = {
-        let view = AchivView(frame: .zero, image: .imgGodsTwo, titleText: "Underworld Master")
+        let view = AchivView(frame: .zero, image: .imgAchiTwo)
         return view
     }()
     
     private (set) var achivThree: AchivView = {
-        let view = AchivView(frame: .zero, image: .imgGodsThree, titleText: "Magic Enthusiast")
+        let view = AchivView(frame: .zero, image: .imgAchiThree)
         return view
     }()
     
     private (set) var achivFour: AchivView = {
-        let view = AchivView(frame: .zero, image: .imgGodsFour, titleText: "Sky Guardian")
+        let view = AchivView(frame: .zero, image: .imgAchiFour)
         return view
     }()
     
     private (set) var achivFive: AchivView = {
-        let view = AchivView(frame: .zero, image: .imgGodsFive, titleText: "Embalmer")
+        let view = AchivView(frame: .zero, image: .imgAchiFive)
         return view
     }()
     
     private (set) var achivSix: AchivView = {
-        let view = AchivView(frame: .zero, image: .imgGodsSix, titleText: "Chaos Conqueror")
+        let view = AchivView(frame: .zero, image: .imgAchiSix)
         return view
     }()
     
     private (set) var achivSeven: AchivView = {
-        let view = AchivView(frame: .zero, image: .imgGodsSeven, titleText: "Wisdom Seeker")
+        let view = AchivView(frame: .zero, image: .imgAchiSeven)
         return view
     }()
     
     private (set) var achivEight: AchivView = {
-        let view = AchivView(frame: .zero, image: .imgGodsEight, titleText: "Truth Keeper")
+        let view = AchivView(frame: .zero, image: .imgAchiEight)
         return view
     }()
     
     private (set) var achivNine: AchivView = {
-        let view = AchivView(frame: .zero, image: .imgGodsNine, titleText: "Joy Bringer")
+        let view = AchivView(frame: .zero, image: .imgAchiNine)
         return view
     }()
     
     private (set) var achivTen: AchivView = {
-        let view = AchivView(frame: .zero, image: .imgGodsTen, titleText: "Home Protector")
+        let view = AchivView(frame: .zero, image: .imgAchiTen)
         return view
     }()
     
     private (set) var achivEleven: AchivView = {
-        let view = AchivView(frame: .zero, image: .imgGodsOne, titleText: "Coin Collector")
+        let view = AchivView(frame: .zero, image: .imgAchiEleven)
         return view
     }()
     
@@ -210,7 +210,6 @@ class ProfileView: UIView, UITextFieldDelegate {
         setupUI()
         setupConstraints()
         saveName()
-        addGradientLayer(to: containerProfile)
         addGradientLayer(to: leftView)
         addGradientLayer(to: rightView)
 
@@ -271,7 +270,7 @@ class ProfileView: UIView, UITextFieldDelegate {
         btnUserPhoto.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.left.equalToSuperview().offset(16)
-            make.size.equalTo(48)
+            make.size.equalTo(52)
         }
         
         profileTextField.snp.makeConstraints { make in
@@ -339,7 +338,7 @@ class ProfileView: UIView, UITextFieldDelegate {
         scrollView.snp.makeConstraints { make in
             make.top.equalTo(containerAnaliz.snp.bottom).offset(32)
             make.left.right.equalToSuperview()
-            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-104)
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-80)
         }
         
         contentView.snp.makeConstraints { make in
@@ -355,79 +354,68 @@ class ProfileView: UIView, UITextFieldDelegate {
         achivOne.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(20)
             make.top.equalTo(achivLabel.snp.bottom).offset(24)
-            make.height.equalTo(140)
-            make.width.equalTo(110)
+            make.size.equalTo(109)
         }
         
         achivTwo.snp.makeConstraints { make in
             make.left.equalTo(achivOne.snp.right).offset(8)
             make.top.equalTo(achivLabel.snp.bottom).offset(24)
-            make.height.equalTo(140)
-            make.width.equalTo(110)
+            make.size.equalTo(109)
         }
         
         achivThree.snp.makeConstraints { make in
             make.left.equalTo(achivTwo.snp.right).offset(8)
             make.top.equalTo(achivLabel.snp.bottom).offset(24)
-            make.height.equalTo(140)
-            make.width.equalTo(110)
+            make.size.equalTo(109)
         }
         
         achivFour.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(20)
             make.top.equalTo(achivOne.snp.bottom).offset(8)
-            make.height.equalTo(140)
-            make.width.equalTo(110)
+            make.size.equalTo(109)
         }
         
         achivFive.snp.makeConstraints { make in
             make.left.equalTo(achivFour.snp.right).offset(8)
             make.top.equalTo(achivOne.snp.bottom).offset(8)
-            make.height.equalTo(140)
-            make.width.equalTo(110)
+            make.size.equalTo(109)
         }
         
         achivSix.snp.makeConstraints { make in
             make.left.equalTo(achivFive.snp.right).offset(8)
             make.top.equalTo(achivOne.snp.bottom).offset(8)
-            make.height.equalTo(140)
-            make.width.equalTo(110)
+            make.size.equalTo(109)
         }
         
         achivSeven.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(20)
             make.top.equalTo(achivFour.snp.bottom).offset(8)
-            make.height.equalTo(140)
-            make.width.equalTo(110)
+            make.size.equalTo(109)
         }
         
         achivEight.snp.makeConstraints { make in
             make.left.equalTo(achivSeven.snp.right).offset(8)
             make.top.equalTo(achivFour.snp.bottom).offset(8)
-            make.height.equalTo(140)
-            make.width.equalTo(110)
+            make.size.equalTo(109)
         }
         
         achivNine.snp.makeConstraints { make in
             make.left.equalTo(achivEight.snp.right).offset(8)
             make.top.equalTo(achivFour.snp.bottom).offset(8)
-            make.height.equalTo(140)
-            make.width.equalTo(110)
+            make.size.equalTo(109)
         }
         
         achivTen.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(20)
             make.top.equalTo(achivSeven.snp.bottom).offset(8)
-            make.height.equalTo(140)
-            make.width.equalTo(110)
+            make.size.equalTo(109)
             make.bottom.equalToSuperview().offset(-20)
         }
         
         achivEleven.snp.makeConstraints { make in
             make.left.equalTo(achivTen.snp.right).offset(8)
             make.top.equalTo(achivSeven.snp.bottom).offset(8)
-            make.height.equalTo(140)
-            make.width.equalTo(110)
+            make.size.equalTo(109)
             make.bottom.equalToSuperview().offset(-20)
         }
     }
@@ -439,18 +427,15 @@ class ProfileView: UIView, UITextFieldDelegate {
         gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
         gradientLayer.frame = view.bounds
         view.layer.insertSublayer(gradientLayer, at: 0)
-        if view == containerProfile {
-               self.containerProfileGradientLayer = gradientLayer
+        if view == rightView {
+               self.rightViewGradientLayer = gradientLayer
            } else if view == leftView {
                self.leftViewGradientLayer = gradientLayer
-           } else if view == rightView {
-               self.rightViewGradientLayer = gradientLayer
            }
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        containerProfileGradientLayer?.frame = containerProfile.bounds
         leftViewGradientLayer?.frame = leftView.bounds
         rightViewGradientLayer?.frame = rightView.bounds
     }

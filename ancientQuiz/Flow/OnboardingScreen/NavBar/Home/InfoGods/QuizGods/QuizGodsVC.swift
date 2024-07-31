@@ -158,7 +158,7 @@ class InfoQuizVC: UIViewController {
             
             let attributesLabel: [NSAttributedString.Key: Any] = [
                 .font: UIFont.customFont(font: .peralta, style: .regular, size: 20),
-                .foregroundColor: UIColor.black,
+                .foregroundColor: UIColor.white,
                 .paragraphStyle: paragraphStyleLabel,
                 .kern: 1.0
             ]
@@ -179,20 +179,9 @@ class InfoQuizVC: UIViewController {
         if selectedIndexPath != nil {
             contentView.quizBtn.isEnabled = true
             contentView.quizBtn.configureButton(withTitle: "Answer", font: .customFont(font: .peralta, style: .regular, size: 32), titleColor: .white, normalImage: .btnNormal, highlightedImage: .btnSelect)
-            contentView.quizBtn.layer.cornerRadius = 35
-            contentView.quizBtn.layer.borderWidth = 5
-            contentView.quizBtn.layer.borderColor = UIColor.red.cgColor
-            contentView.quizBtn.layer.shadowColor = UIColor(red: 0.976, green: 0.471, blue: 0.216, alpha: 0.5).cgColor
-            contentView.quizBtn.layer.shadowOpacity = 1
-            contentView.quizBtn.layer.shadowRadius = 20
-            contentView.quizBtn.layer.shadowOffset = CGSize(width: 0, height: 2)
         } else {
             contentView.quizBtn.isEnabled = false
             contentView.quizBtn.configureButton(withTitle: "Answer", font: .customFont(font: .peralta, style: .regular, size: 32), titleColor: .white, normalImage: .btnLocked, highlightedImage: .btnLocked)
-            contentView.quizBtn.layer.cornerRadius = 35
-            contentView.quizBtn.layer.borderWidth = 0
-            contentView.quizBtn.layer.borderColor = UIColor.clear.cgColor
-
         }
     }
     
@@ -256,7 +245,7 @@ extension InfoQuizVC: UICollectionViewDelegate, UICollectionViewDataSource, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = (collectionView.frame.width - 20) // Adjusting width for spacing
-        return CGSize(width: width, height: 64.autoSize)
+        let width = (collectionView.frame.width - 40) // Adjusting width for spacing
+        return CGSize(width: width, height: 62.autoSize)
     }
 }

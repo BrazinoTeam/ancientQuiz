@@ -9,7 +9,7 @@ class InfoView: UIView {
     
     private (set) var bgImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = .bgHome
+        imageView.image = .bgInfo
         return imageView
     }()
     
@@ -21,7 +21,7 @@ class InfoView: UIView {
     
     private (set) var imageInfo: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = .imgGodsOne
+        imageView.image = .imgInfo
         return imageView
     }()
     
@@ -38,7 +38,7 @@ class InfoView: UIView {
     
     private (set) var subTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Welcome to\nAncient Quiz!"
+        label.text = "Welcome to Ancient\nQuiz!"
         label.font = .customFont(font: .peralta, style: .regular, size: 28)
         label.textAlignment = .center
         label.textColor = .white
@@ -46,33 +46,89 @@ class InfoView: UIView {
         return label
     }()
     
-    private (set) var bodyLabel: UILabel = {
-        let label = UILabel.createLabel(withText: """
-Explore the mysteries of ancient Egypt and test your knowledge in exciting quizzes. Your goal is to answer questions about the 10 famous Egyptian gods, such as Ra, Osiris, Isis, Horus, Anubis, and others.
+    private (set) var labelOne: UILabel = {
+        let label = UILabel.createLabel(withText: "Explore the mysteries of ancient Egypt and test your knowledge in exciting quizzes. Your goal is to answer questions about the 10 famous Egyptian gods, such as Ra, Osiris, Isis, Horus, Anubis, and others.", font: .customFont(font: .inter, style: .semiBold, size: 14), textColor: .white, paragraphSpacing: 1, lineHeightMultiple: 1)
+        label.textAlignment = .left
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    private (set) var labelTwo: UILabel = {
+        let label = UILabel()
+        label.text = "How to Play:"
+        label.font = .customFont(font: .peralta, style: .regular, size: 16)
+        label.textAlignment = .left
+        label.textColor = .white
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    private(set) var labelThree: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.textAlignment = .left
 
-How to Play:
+        let fullText = """
+        1. Choose a God: On the main page, you will find a list of gods. Click on a god's image to learn more about them.
+        2. Study the Information: On the description page, you will find fascinating stories and myths about each god.
+        3. Take the Quiz: Click on the "Quiz" button to start the quiz. You will need to answer 10 questions.
+        4. Earn Rewards: For each correct answer, you earn points. If you answer 7 or more questions correctly, you will receive 100 coins!
+        5. Daily Bonuses: Don't forget to visit the game every day to receive additional rewards.
+        """
 
-    \u{2022}Choose a God: On the main page, you will find a list of gods. Click on a god's image to learn more about them.
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineHeightMultiple = 1
+        paragraphStyle.paragraphSpacing = 1
+        paragraphStyle.headIndent = 18 // отступ для всех строк
+        paragraphStyle.firstLineHeadIndent = 0 // отступ для первой строки
 
-    \u{2022}Study the Information: On the description page, you will find fascinating stories and myths about each god.
+        let attributedString = NSMutableAttributedString(string: fullText, attributes: [
+            .font: UIFont.customFont(font: .inter, style: .semiBold, size: 14),
+            .foregroundColor: UIColor.white,
+            .paragraphStyle: paragraphStyle
+        ])
 
-    \u{2022}Take the Quiz: Click on the "Quiz" button to start the quiz. You will need to answer 10 questions.
+        label.attributedText = attributedString
+        return label
+    }()
+    
+    private (set) var labelFour: UILabel = {
+        let label = UILabel.createLabel(withText: "Helpful Tips:", font: .customFont(font: .peralta, style: .regular, size: 16), textColor: .white, paragraphSpacing: 1, lineHeightMultiple: 1)
+        label.textAlignment = .left
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    private (set) var labelFive: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.textAlignment = .left
 
-    \u{2022}Earn Rewards: For each correct answer, you earn points. If you answer 7 or more questions correctly, you will receive 100 coins!
+        let fullText = """
+        1. Read Descriptions Carefully: All the information you need for the correct answers is contained in the descriptions of the gods.
+        2. Take Your Time: Carefully consider each question to increase your chances of answering correctly.
+        3. Collect Coins: Accumulated coins will help you unlock new levels and receive additional bonuses.
+        """
 
-    \u{2022}Daily Bonuses: Don't forget to visit the game every day to receive additional rewards.
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineHeightMultiple = 1
+        paragraphStyle.paragraphSpacing = 1
+        paragraphStyle.headIndent = 18
+        paragraphStyle.firstLineHeadIndent = 0
 
-Helpful Tips:
+        let attributedString = NSMutableAttributedString(string: fullText, attributes: [
+            .font: UIFont.customFont(font: .inter, style: .semiBold, size: 14),
+            .foregroundColor: UIColor.white,
+            .paragraphStyle: paragraphStyle
+        ])
 
-     \u{2022}Read Descriptions Carefully: All the information you need for the correct answers is contained in the descriptions of the gods.
-
-     \u{2022}Take Your Time: Carefully consider each question to increase your chances of answering correctly.
-
-     \u{2022}Collect Coins: Accumulated coins will help you unlock new levels and receive additional bonuses.
-
-Immerse yourself in ancient myths and legends with Ancient Quiz and become a true expert in Egyptian mythology!
-""", font: .customFont(font: .peralta, style: .regular, size: 14), textColor: .white, paragraphSpacing: 1, lineHeightMultiple: 1.13)
-        label.textAlignment = .justified
+        label.attributedText = attributedString
+        return label
+    }()
+    
+    private (set) var labelSix: UILabel = {
+        let label = UILabel.createLabel(withText: "Immerse yourself in ancient myths and legends with Ancient Quiz and become a true expert in Egyptian mythology!", font: .customFont(font: .peralta, style: .regular, size: 16), textColor: .white, paragraphSpacing: 1, lineHeightMultiple: 1)
+        label.textAlignment = .left
         label.numberOfLines = 0
         return label
     }()
@@ -93,7 +149,12 @@ Immerse yourself in ancient myths and legends with Ancient Quiz and become a tru
         scrollView.addSubview(contentView)
         contentView.addSubview(imageInfo)
         contentView.addSubview(subTitleLabel)
-        contentView.addSubview(bodyLabel)
+        contentView.addSubview(labelOne)
+        contentView.addSubview(labelTwo)
+        contentView.addSubview(labelThree)
+        contentView.addSubview(labelFour)
+        contentView.addSubview(labelFive)
+        contentView.addSubview(labelSix)
 
     }
     
@@ -129,8 +190,33 @@ Immerse yourself in ancient myths and legends with Ancient Quiz and become a tru
             make.centerX.equalToSuperview()
         }
         
-        bodyLabel.snp.makeConstraints { make in
+        labelOne.snp.makeConstraints { make in
             make.top.equalTo(subTitleLabel.snp.bottom).offset(20.autoSize)
+            make.left.right.equalToSuperview().inset(20)
+        }
+        
+        labelTwo.snp.makeConstraints { make in
+            make.top.equalTo(labelOne.snp.bottom).offset(16.autoSize)
+            make.left.right.equalToSuperview().inset(20)
+        }
+        
+        labelThree.snp.makeConstraints { make in
+            make.top.equalTo(labelTwo.snp.bottom).offset(16.autoSize)
+            make.left.right.equalToSuperview().inset(20)
+        }
+        
+        labelFour.snp.makeConstraints { make in
+            make.top.equalTo(labelThree.snp.bottom).offset(16.autoSize)
+            make.left.right.equalToSuperview().inset(20)
+        }
+        
+        labelFive.snp.makeConstraints { make in
+            make.top.equalTo(labelFour.snp.bottom).offset(16.autoSize)
+            make.left.right.equalToSuperview().inset(20)
+        }
+        
+        labelSix.snp.makeConstraints { make in
+            make.top.equalTo(labelFive.snp.bottom).offset(16.autoSize)
             make.left.right.equalToSuperview().inset(20)
             make.bottom.equalToSuperview()
         }

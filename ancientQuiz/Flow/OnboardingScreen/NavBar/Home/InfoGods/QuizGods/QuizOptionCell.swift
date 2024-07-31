@@ -16,6 +16,13 @@ class QuizOptionCell: UICollectionViewCell {
         return view
     }()
     
+    private(set) var bgCell: UIImageView = {
+        let img = UIImageView()
+        img.image = .imgBgCell
+        img.contentMode = .scaleToFill
+        return img
+    }()
+    
     private(set) var nameLabel: UILabel = {
         let label = UILabel()
         label.font = .customFont(font: .peralta, style: .regular, size: 12)
@@ -28,9 +35,9 @@ class QuizOptionCell: UICollectionViewCell {
     
     private(set) var optionLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+        label.font = UIFont.customFont(font: .peralta, style: .regular, size: 16)
         label.textColor = .white
-        label.textAlignment = .left
+        label.textAlignment = .center
         label.numberOfLines = 0
         label.adjustsFontSizeToFitWidth = true
         return label
@@ -51,7 +58,7 @@ class QuizOptionCell: UICollectionViewCell {
     
     private func setupUI() {
         contentView.addSubview(quizView)
-        contentView.addSubview(nameLabel)
+        contentView.addSubview(bgCell)
         contentView.addSubview(optionLabel)
         contentView.layer.borderWidth = 1
         contentView.layer.cornerRadius = 6
@@ -62,15 +69,14 @@ class QuizOptionCell: UICollectionViewCell {
             make.edges.equalToSuperview()
         }
         
-        nameLabel.snp.makeConstraints { make in
-            make.centerY.equalToSuperview().offset(4)
-            make.left.equalToSuperview().offset(24)
+        bgCell.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
         }
         
         optionLabel.snp.makeConstraints { make in
-            make.centerY.equalToSuperview()
-            make.left.equalTo(nameLabel.snp.right).offset(8)
-            make.right.equalToSuperview().offset(4)
+            make.center.equalToSuperview()
+            make.width.equalTo(320)
+            make.height.equalTo(42)
         }
     }
     
@@ -82,64 +88,40 @@ class QuizOptionCell: UICollectionViewCell {
         contentView.backgroundColor = .clear
         removeBackgroundGradient()
         removeGradientBorder()
-
-        switch index {
-        case 0:
-            nameLabel.text = "A."
-        case 1:
-            nameLabel.text = "B."
-        case 2:
-            nameLabel.text = "C."
-        case 3:
-            nameLabel.text = "D."
-        default:
-            break
-        }
+        
     }
     
     func setSelected(_ selected: Bool) {
         if selected {
-            applyGradientBorder()
+            bgCell.image = .imgBgCellSelect
         } else {
-            removeGradientBorder()
+            bgCell.image = .imgBgCell
         }
     }
     
     func setCorrect(_ correct: Bool) {
         if correct {
-            applyBackgroundGradient()
+            bgCell.image = .imgBgCellGreen
         } else {
-            removeBackgroundGradient()
-            contentView.layer.borderColor = UIColor.red.cgColor
-            contentView.layer.borderWidth = 2
-            optionLabel.textColor = .red
-            nameLabel.textColor = .red
+            bgCell.image = .imgBgCellRed
+            optionLabel.textColor = .white
 
         }
     }
     
-    private func applyGradientBorder() {
+    private func applyGradientBackground() {
         gradientLayer?.removeFromSuperlayer()
-        
+
         let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [UIColor.gray.cgColor, UIColor.white.cgColor]
+        gradientLayer.colors = [UIColor.cTabOne.cgColor, UIColor.cTabTwo.cgColor]
         gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
         gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
         gradientLayer.frame = contentView.bounds
         gradientLayer.cornerRadius = contentView.layer.cornerRadius
-        
-        let shapeLayer = CAShapeLayer()
-        shapeLayer.lineWidth = 4
-        shapeLayer.path = UIBezierPath(roundedRect: contentView.bounds, cornerRadius: contentView.layer.cornerRadius).cgPath
-        shapeLayer.fillColor = UIColor.clear.cgColor
-        shapeLayer.strokeColor = UIColor.black.cgColor
-        gradientLayer.mask = shapeLayer
-        
-        contentView.layer.addSublayer(gradientLayer)
+
+        contentView.layer.insertSublayer(gradientLayer, at: 0)
         self.gradientLayer = gradientLayer
         optionLabel.textColor = .white
-        nameLabel.textColor = .white
-
     }
     
     private func removeGradientBorder() {

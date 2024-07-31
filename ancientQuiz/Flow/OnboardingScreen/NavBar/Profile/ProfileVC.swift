@@ -41,26 +41,23 @@ class ProfileVC: UIViewController {
         } else {
             ud.coinCollector = false
         }
-        contentView.achivOne.alpha = ud.sunGodExpert ? 1 : 0.4
-        contentView.achivTwo.alpha = ud.underworldMaster ? 1 : 0.4
-        contentView.achivThree.alpha = ud.magicEnthusiast ? 1 : 0.4
-        contentView.achivFour.alpha = ud.skyGuardian ? 1 : 0.4
-        contentView.achivFive.alpha = ud.embalmer ? 1 : 0.4
-        contentView.achivSix.alpha = ud.chaosConqueror ? 1 : 0.4
-        contentView.achivSeven.alpha = ud.wisdomSeeker ? 1 : 0.4
-        contentView.achivEight.alpha = ud.truthKeeper ? 1 : 0.4
-        contentView.achivNine.alpha = ud.joyBringer ? 1 : 0.4
-        contentView.achivTen.alpha = ud.homeProtector ? 1 : 0.4
-        contentView.achivEleven.alpha = ud.coinCollector ? 1 : 0.4
+        contentView.achivOne.imageGods.image = ud.sunGodExpert ? .imgAchiOne : .imgAchiOneLock
+        contentView.achivTwo.imageGods.image = ud.underworldMaster ? .imgAchiTwo : .imgAchiTwoLock
+        contentView.achivThree.imageGods.image = ud.magicEnthusiast ? .imgAchiThree : .imgAchiThreeLock
+        contentView.achivFour.imageGods.image = ud.skyGuardian ? .imgAchiFour : .imgAchiFourLock
+        contentView.achivFive.imageGods.image = ud.embalmer ? .imgAchiFive : .imgAchiFiveLock
+        contentView.achivSix.imageGods.image = ud.chaosConqueror ? .imgAchiSix : .imgAchiSixLock
+        contentView.achivSeven.imageGods.image = ud.wisdomSeeker ? .imgAchiSeven : .imgAchiSevenLock
+        contentView.achivEight.imageGods.image = ud.truthKeeper ? .imgAchiEight : .imgAchiEightLock
+        contentView.achivNine.imageGods.image = ud.joyBringer ? .imgAchiNine : .imgAchiNineLock
+        contentView.achivTen.imageGods.image = ud.homeProtector ? .imgAchiTen : .imgAchiTenLock
+        contentView.achivEleven.imageGods.image = ud.coinCollector ? .imgAchiEleven : .imgAchiElevenLock
     }
     
     private func updateLabelCount() {
         contentView.countLabelQuizzes.text = "\(ud.quizzComleted)"
-        contentView.countLabelQuizzes.setGradientText(colors: [.yellow, .orange])
         contentView.countLabelTotal.text = "\(ud.scorePoints)"
-        contentView.countLabelTotal.setGradientText(colors: [.yellow, .orange])
         contentView.countLabelUnlocked.text = "\(ud.countTrueAchievements())"
-        contentView.countLabelUnlocked.setGradientText(colors: [.yellow, .orange])
         
     }
     
@@ -118,47 +115,47 @@ class ProfileVC: UIViewController {
     }
     
     @objc private func tappedAchiOne() {
-        presentModalView(title: "Sun God Expert", subtitle: "Successfully complete the quiz about Ra", image: .imgGodsOne)
+        presentModalView(title: "Sun God Expert", subtitle: "Successfully complete the quiz about Ra", image: .imgAchiOne)
       }
     
     @objc private func tappedAchiTwo() {
-        presentModalView(title: "Underworld Master", subtitle: "Successfully complete the quiz about Osiris", image: .imgGodsTwo)
+        presentModalView(title: "Underworld Master", subtitle: "Successfully complete the quiz about Osiris", image: .imgAchiTwo)
       }
     
     @objc private func tappedAchiThree() {
-        presentModalView(title: "Magic Enthusiast", subtitle: "Successfully complete the quiz about Isis", image: .imgGodsThree)
+        presentModalView(title: "Magic Enthusiast", subtitle: "Successfully complete the quiz about Isis", image: .imgAchiThree)
       }
     
     @objc private func tappedAchiFour() {
-        presentModalView(title: "Sky Guardian", subtitle: "Successfully complete the quiz about Horus", image: .imgGodsFour)
+        presentModalView(title: "Sky Guardian", subtitle: "Successfully complete the quiz about Horus", image: .imgAchiFour)
       }
     
     @objc private func tappedAchiFive() {
-        presentModalView(title: "Embalmer", subtitle: "Successfully complete the quiz about Anubis", image: .imgGodsFive)
+        presentModalView(title: "Embalmer", subtitle: "Successfully complete the quiz about Anubis", image: .imgAchiFive)
       }
     
     @objc private func tappedAchiSix() {
-        presentModalView(title: "Chaos Conqueror", subtitle: "Successfully complete the quiz about Set", image: .imgGodsSix)
+        presentModalView(title: "Chaos Conqueror", subtitle: "Successfully complete the quiz about Set", image: .imgAchiSix)
       }
     
     @objc private func tappedAchiSeven() {
-        presentModalView(title: "Wisdom Seeker", subtitle: "Successfully complete the quiz about Thoth", image: .imgGodsSeven)
+        presentModalView(title: "Wisdom Seeker", subtitle: "Successfully complete the quiz about Thoth", image: .imgAchiSeven)
       }
     
     @objc private func tappedAchiEight() {
-        presentModalView(title: "Truth Keeper", subtitle: "Successfully complete the quiz about Ma'at", image: .imgGodsEight)
+        presentModalView(title: "Truth Keeper", subtitle: "Successfully complete the quiz about Ma'at", image: .imgAchiEight)
       }
     
     @objc private func tappedAchiNine() {
-        presentModalView(title: "Joy Bringer", subtitle: "Successfully complete the quiz about Hathor", image: .imgGodsNine)
+        presentModalView(title: "Joy Bringer", subtitle: "Successfully complete the quiz about Hathor", image: .imgAchiNine)
       }
     
     @objc private func tappedAchiTen() {
-        presentModalView(title: "Home Protector", subtitle: "Successfully complete the quiz about Bastet", image: .imgGodsTen)
+        presentModalView(title: "Home Protector", subtitle: "Successfully complete the quiz about Bastet", image: .imgAchiTen)
       }
     
     @objc private func tappedAchiEleven() {
-        presentModalView(title: "Coin Collector", subtitle: "Collect a total of 1,000 coins", image: .imgGodsOne)
+        presentModalView(title: "Coin Collector", subtitle: "Collect a total of 1,000 coins", image: .imgAchiEleven)
       }
     @objc func tappeUpdateName() {
         if contentView.btnEdit.backgroundImage(for: .normal) == UIImage(named: "checkBtn") {
@@ -213,72 +210,75 @@ class ProfileVC: UIViewController {
             fullScreenView!.alpha = 0
             
             let viewConteiner = UIView()
-            viewConteiner.backgroundColor = .white
-            viewConteiner.layer.cornerRadius = 8
-            viewConteiner.layer.borderWidth = 2
-            viewConteiner.layer.borderColor = UIColor.yellow.withAlphaComponent(0.6).cgColor
-            viewConteiner.layer.shadowColor = UIColor.yellow.withAlphaComponent(0.7).cgColor
-            viewConteiner.layer.shadowOpacity = 2
-            viewConteiner.layer.shadowOffset = CGSize(width: 4, height: 15)
-            viewConteiner.layer.shadowRadius = 20
+            viewConteiner.backgroundColor = .clear
             fullScreenView!.addSubview(viewConteiner)
             
+            let bgImage = UIImageView(image: .imgContainerModal)
+            bgImage.contentMode = .scaleToFill
+            viewConteiner.addSubview(bgImage)
+            
             let imageBonusView = UIImageView(image: image)
-            imageBonusView.contentMode = .scaleAspectFit
+            imageBonusView.contentMode = .scaleToFill
+            imageBonusView.layer.shadowColor = UIColor(red: 1, green: 0.992, blue: 0.569, alpha: 0.45).cgColor
+            imageBonusView.layer.shadowOpacity = 1
+            imageBonusView.layer.shadowRadius = 11.2
+            imageBonusView.layer.shadowOffset = CGSize(width: 2, height: 3)
             viewConteiner.addSubview(imageBonusView)
             
             let titleLabel = UILabel()
             titleLabel.text = title
-            titleLabel.font = .customFont(font: .peralta, style: .regular, size: 18)
-            titleLabel.textColor = .black
+            titleLabel.font = .customFont(font: .peralta, style: .regular, size: 28)
+            titleLabel.textColor = .white
             titleLabel.numberOfLines = 0
             titleLabel.textAlignment = .center
             viewConteiner.addSubview(titleLabel)
             
             let subtitleLabelView = UILabel()
             subtitleLabelView.text = subtitle
-            subtitleLabelView.font = .customFont(font: .peralta, style: .regular, size: 12)
-            subtitleLabelView.textColor = .black
+            subtitleLabelView.font = .customFont(font: .peralta, style: .regular, size: 20)
+            subtitleLabelView.textColor = .white
             subtitleLabelView.numberOfLines = 0
             subtitleLabelView.textAlignment = .center
             viewConteiner.addSubview(subtitleLabelView)
             
             
             let backButton = UIButton()
-            backButton.setTitle("OK", for: .normal)
-            backButton.backgroundColor = .red
-            backButton.layer.cornerRadius = 20
+            backButton.configureButton(withTitle: "Close", font: .customFont(font: .peralta, style: .regular, size: 32), titleColor: .white, normalImage: .btnNormal, highlightedImage: .btnSelect)
             backButton.addTarget(self, action: #selector(tappedCloseBuy), for: .touchUpInside)
             fullScreenView!.addSubview(backButton)
             
             viewConteiner.snp.makeConstraints { make in
                 make.centerX.equalToSuperview()
                 make.centerY.equalToSuperview()
-                make.height.equalTo(469)
+                make.height.equalTo(524)
                 make.width.equalTo(353)
+            }
+            
+            bgImage.snp.makeConstraints { make in
+                make.edges.equalToSuperview()
             }
             
             titleLabel.snp.makeConstraints { make in
                 make.top.equalToSuperview().offset(24)
-                make.centerX.equalToSuperview()
-            }
-            
-            subtitleLabelView.snp.makeConstraints { make in
-                make.top.equalTo(titleLabel.snp.bottom).offset(12)
-                make.centerX.equalToSuperview()
+                make.left.right.equalToSuperview().inset(34)
             }
             
             imageBonusView.snp.makeConstraints { make in
                 make.centerX.equalToSuperview()
-                make.top.equalTo(subtitleLabelView.snp.bottom).offset(24)
-                make.size.equalTo(205)
+                make.top.equalTo(titleLabel.snp.bottom).offset(32)
+                make.size.equalTo(176)
+            }
+            
+            subtitleLabelView.snp.makeConstraints { make in
+                make.top.equalTo(imageBonusView.snp.bottom).offset(32)
+                make.left.right.equalToSuperview().inset(20)
             }
             
             backButton.snp.makeConstraints { make in
-                make.top.equalTo(imageBonusView.snp.bottom).offset(32)
+                make.top.equalTo(subtitleLabelView.snp.bottom).offset(32)
                 make.centerX.equalToSuperview()
-                make.height.equalTo(48)
-                make.width.equalTo(300)
+                make.height.equalTo(80)
+                make.width.equalTo(312)
             }
             
             self.view.addSubview(fullScreenView!)

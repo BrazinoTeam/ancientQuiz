@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "god (3).png",
+      "filename" : "lose.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "god (4).png",
+      "filename" : "lose (1).png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "god (5).png",
+      "filename" : "lose (2).png",
       "idiom" : "universal",
       "scale" : "3x"
     }

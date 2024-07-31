@@ -16,6 +16,13 @@
 		181642E12C57CEF500F68824 /* LoseQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181642E02C57CEF500F68824 /* LoseQuizView.swift */; };
 		181642E32C57CEFB00F68824 /* WinQuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181642E22C57CEFB00F68824 /* WinQuizVC.swift */; };
 		181642E52C57CEFF00F68824 /* WinQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181642E42C57CEFF00F68824 /* WinQuizView.swift */; };
+		182BD1A22C5A4A270038B9D1 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 182BD1A02C5A4A270038B9D1 /* Inter-Medium.ttf */; };
+		182BD1A32C5A4A270038B9D1 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 182BD1A12C5A4A270038B9D1 /* Inter-SemiBold.ttf */; };
+		182BD1A52C5A4C510038B9D1 /* OnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182BD1A42C5A4C510038B9D1 /* OnboardingScreen.swift */; };
+		182BD1A72C5A4C620038B9D1 /* OnboardingScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182BD1A62C5A4C620038B9D1 /* OnboardingScreenViewModel.swift */; };
+		182BD1A92C5A4C790038B9D1 /* OnboardingProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182BD1A82C5A4C790038B9D1 /* OnboardingProgressBarView.swift */; };
+		182BD1AB2C5A4D1B0038B9D1 /* Extension+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182BD1AA2C5A4D1B0038B9D1 /* Extension+Color.swift */; };
+		182BD1AD2C5A4D240038B9D1 /* Extension+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182BD1AC2C5A4D240038B9D1 /* Extension+View.swift */; };
 		18D5D21E2C53A8E10012CFD4 /* InfoGodsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D5D21D2C53A8E10012CFD4 /* InfoGodsVC.swift */; };
 		18D5D2202C53A8E60012CFD4 /* InfoGodsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D5D21F2C53A8E60012CFD4 /* InfoGodsView.swift */; };
 		18D5D2222C53A8FB0012CFD4 /* QuizGodsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D5D2212C53A8FB0012CFD4 /* QuizGodsVC.swift */; };
@@ -38,7 +45,6 @@
 		18F7905F2C527B1600ED195E /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F7905E2C527B1600ED195E /* InfoView.swift */; };
 		18F790612C527B1F00ED195E /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F790602C527B1F00ED195E /* NavBar.swift */; };
 		18F790632C527B2A00ED195E /* OnboardingScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F790622C527B2A00ED195E /* OnboardingScreenVC.swift */; };
-		18F790652C527B2E00ED195E /* OnboardingScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F790642C527B2E00ED195E /* OnboardingScreenView.swift */; };
 		18F790682C527D1700ED195E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 18F790672C527D1700ED195E /* SnapKit */; };
 		18F7906E2C527E8A00ED195E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F7906D2C527E8A00ED195E /* Settings.swift */; };
 		18F790712C527EDE00ED195E /* Double + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F790702C527EDE00ED195E /* Double + Extension.swift */; };
@@ -56,6 +62,13 @@
 		181642E02C57CEF500F68824 /* LoseQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoseQuizView.swift; sourceTree = "<group>"; };
 		181642E22C57CEFB00F68824 /* WinQuizVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinQuizVC.swift; sourceTree = "<group>"; };
 		181642E42C57CEFF00F68824 /* WinQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinQuizView.swift; sourceTree = "<group>"; };
+		182BD1A02C5A4A270038B9D1 /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
+		182BD1A12C5A4A270038B9D1 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
+		182BD1A42C5A4C510038B9D1 /* OnboardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreen.swift; sourceTree = "<group>"; };
+		182BD1A62C5A4C620038B9D1 /* OnboardingScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreenViewModel.swift; sourceTree = "<group>"; };
+		182BD1A82C5A4C790038B9D1 /* OnboardingProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingProgressBarView.swift; sourceTree = "<group>"; };
+		182BD1AA2C5A4D1B0038B9D1 /* Extension+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Color.swift"; sourceTree = "<group>"; };
+		182BD1AC2C5A4D240038B9D1 /* Extension+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+View.swift"; sourceTree = "<group>"; };
 		18D5D21D2C53A8E10012CFD4 /* InfoGodsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoGodsVC.swift; sourceTree = "<group>"; };
 		18D5D21F2C53A8E60012CFD4 /* InfoGodsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoGodsView.swift; sourceTree = "<group>"; };
 		18D5D2212C53A8FB0012CFD4 /* QuizGodsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizGodsVC.swift; sourceTree = "<group>"; };
@@ -80,7 +93,6 @@
 		18F7905E2C527B1600ED195E /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		18F790602C527B1F00ED195E /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
 		18F790622C527B2A00ED195E /* OnboardingScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreenVC.swift; sourceTree = "<group>"; };
-		18F790642C527B2E00ED195E /* OnboardingScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreenView.swift; sourceTree = "<group>"; };
 		18F7906D2C527E8A00ED195E /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		18F790702C527EDE00ED195E /* Double + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double + Extension.swift"; sourceTree = "<group>"; };
 		18F790722C527EED00ED195E /* Font + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font + Extension.swift"; sourceTree = "<group>"; };
@@ -182,7 +194,9 @@
 			isa = PBXGroup;
 			children = (
 				18F790622C527B2A00ED195E /* OnboardingScreenVC.swift */,
-				18F790642C527B2E00ED195E /* OnboardingScreenView.swift */,
+				182BD1A42C5A4C510038B9D1 /* OnboardingScreen.swift */,
+				182BD1A62C5A4C620038B9D1 /* OnboardingScreenViewModel.swift */,
+				182BD1A82C5A4C790038B9D1 /* OnboardingProgressBarView.swift */,
 				18F790462C527A8700ED195E /* NavBar */,
 			);
 			path = OnboardingScreen;
@@ -255,6 +269,8 @@
 			children = (
 				18F790752C527F8B00ED195E /* UD.swift */,
 				18F790722C527EED00ED195E /* Font + Extension.swift */,
+				182BD1AA2C5A4D1B0038B9D1 /* Extension+Color.swift */,
+				182BD1AC2C5A4D240038B9D1 /* Extension+View.swift */,
 				18F790702C527EDE00ED195E /* Double + Extension.swift */,
 				18F7906F2C527EA200ED195E /* ServiceBackEnd */,
 				18F7906A2C527E7500ED195E /* Settings */,
@@ -282,6 +298,8 @@
 		18F790742C527F5600ED195E /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				182BD1A02C5A4A270038B9D1 /* Inter-Medium.ttf */,
+				182BD1A12C5A4A270038B9D1 /* Inter-SemiBold.ttf */,
 				181642D82C57B58E00F68824 /* Peralta-Regular.ttf */,
 			);
 			path = Fonts;
@@ -351,9 +369,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				182BD1A32C5A4A270038B9D1 /* Inter-SemiBold.ttf in Resources */,
 				18D5D2262C53A90F0012CFD4 /* jsonData.json in Resources */,
 				18F7903A2C5279DD00ED195E /* Assets.xcassets in Resources */,
 				18F7903D2C5279DD00ED195E /* Base in Resources */,
+				182BD1A22C5A4A270038B9D1 /* Inter-Medium.ttf in Resources */,
 				181642D92C57B58E00F68824 /* Peralta-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,18 +388,21 @@
 				18F790572C527B0000ED195E /* BonusView.swift in Sources */,
 				18F790552C527AFC00ED195E /* BonusVC.swift in Sources */,
 				18F790512C527AF300ED195E /* ProfileVC.swift in Sources */,
-				18F790652C527B2E00ED195E /* OnboardingScreenView.swift in Sources */,
+				182BD1A92C5A4C790038B9D1 /* OnboardingProgressBarView.swift in Sources */,
 				18D5D2202C53A8E60012CFD4 /* InfoGodsView.swift in Sources */,
 				18F790732C527EED00ED195E /* Font + Extension.swift in Sources */,
+				182BD1AB2C5A4D1B0038B9D1 /* Extension+Color.swift in Sources */,
 				181642E32C57CEFB00F68824 /* WinQuizVC.swift in Sources */,
 				18F7905D2C527B1200ED195E /* InfoVC.swift in Sources */,
 				181642E52C57CEFF00F68824 /* WinQuizView.swift in Sources */,
 				18F7905F2C527B1600ED195E /* InfoView.swift in Sources */,
 				181642E12C57CEF500F68824 /* LoseQuizView.swift in Sources */,
+				182BD1A52C5A4C510038B9D1 /* OnboardingScreen.swift in Sources */,
 				18D5D2282C53A9380012CFD4 /* GodsModel.swift in Sources */,
 				18F790592C527B0700ED195E /* LeaderboardVC.swift in Sources */,
 				18D5D2242C53A8FF0012CFD4 /* QuizGodsView.swift in Sources */,
 				181642DB2C57C6D100F68824 /* QuizOptionCell.swift in Sources */,
+				182BD1AD2C5A4D240038B9D1 /* Extension+View.swift in Sources */,
 				18F7904D2C527AE800ED195E /* HomeVC.swift in Sources */,
 				18D5D2222C53A8FB0012CFD4 /* QuizGodsVC.swift in Sources */,
 				18143BBA2C58F8550079F8CA /* AchivView.swift in Sources */,
@@ -397,6 +420,7 @@
 				181642DF2C57CEF100F68824 /* LoseQuizVC.swift in Sources */,
 				18F790762C527F8B00ED195E /* UD.swift in Sources */,
 				18F790332C5279DB00ED195E /* SceneDelegate.swift in Sources */,
+				182BD1A72C5A4C620038B9D1 /* OnboardingScreenViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

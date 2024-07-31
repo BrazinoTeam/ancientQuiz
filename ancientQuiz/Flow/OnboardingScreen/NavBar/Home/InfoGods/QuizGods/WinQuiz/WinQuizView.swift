@@ -9,7 +9,7 @@ class WinQuizView: UIView {
     
     private (set) var bgImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = .bgHome
+        imageView.image = .bgClassic
         return imageView
     }()
 
@@ -21,7 +21,7 @@ class WinQuizView: UIView {
     }()
     
     private (set) var subTitleLabel: UILabel = {
-        let label = UILabel.createLabel(withText: "You successfully completed the quiz about ancient Egyptian gods!\nYour reward is", font: .systemFont(ofSize: 18, weight: .medium), textColor: .white, paragraphSpacing: 0, lineHeightMultiple: 1.08)
+        let label = UILabel.createLabel(withText: "You successfully completed the quiz about ancient Egyptian gods!\n\nYour reward is", font: .systemFont(ofSize: 18, weight: .medium), textColor: .white, paragraphSpacing: 0, lineHeightMultiple: 1.24)
         label.textAlignment = .center
         label.numberOfLines = 0
         return label
@@ -42,13 +42,6 @@ class WinQuizView: UIView {
     private (set) var btnOk: UIButton = {
         let button = UIButton()
         button.configureButton(withTitle: "Thanks", font: .customFont(font: .peralta, style: .regular, size: 32), titleColor: .white, normalImage: .btnNormal, highlightedImage: .btnSelect)
-        button.layer.cornerRadius = 35
-        button.layer.borderWidth = 5
-        button.layer.borderColor = UIColor.red.cgColor
-        button.layer.shadowColor = UIColor(red: 0.976, green: 0.471, blue: 0.216, alpha: 0.5).cgColor
-        button.layer.shadowOpacity = 1
-        button.layer.shadowRadius = 20
-        button.layer.shadowOffset = CGSize(width: 0, height: 2)
         return button
     }()
     
@@ -74,7 +67,7 @@ class WinQuizView: UIView {
         }
         
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(80)
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(48)
             make.left.right.equalToSuperview().inset(20)
         }
         
@@ -91,15 +84,14 @@ class WinQuizView: UIView {
         imgWinner.snp.makeConstraints { make in
             make.top.equalTo(imgPointsWin.snp.bottom).offset(-8)
             make.left.right.equalToSuperview().inset(20)
-            make.width.equalTo(353.autoSize)
-            make.height.equalTo(280.autoSize)
+            make.size.equalTo(313)
         }
         
         btnOk.snp.makeConstraints { make in
             make.top.equalTo(imgWinner.snp.bottom).offset(32.autoSize)
             make.centerX.equalToSuperview()
             make.width.equalTo(353)
-            make.height.equalTo(75)
+            make.height.equalTo(80)
         }
     }
 }

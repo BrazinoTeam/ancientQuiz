@@ -1,41 +1,49 @@
 //
 //  OnboardingScreenVC.swift
 
+import Combine
 import Foundation
 import UIKit
 import SnapKit
+import SwiftUI
 
 class OnboardingScreenVC: UIViewController {
     
-
-    var contentView: OnboardingScreenView {
-        view as? OnboardingScreenView ?? OnboardingScreenView()
-    }
+//    private let auth = AuthTokenService.shared
+//    private let post = PostRequestService.shared
+    private let ud = UD.shared
     
-
-    override func loadView() {
-        view = OnboardingScreenView()
-    }
+    private var onboardVM: OnboardVM = OnboardVM()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.goNavBar()
+        let onboardingScreen = OnboardingScreen(loadignViewModel: onboardVM)
+        let hostingController = UIHostingController(rootView: onboardingScreen)
+        addChild(hostingController)
+        hostingController.view.frame = self.view.frame
+        self.view.addSubview(hostingController.view)
+        hostingController.didMove(toParent: self)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        animateProgressBar()
+    }
+    
+    func animateProgressBar() {
+        DispatchQueue.main.async {
+            self.onboardVM.isAnimating = true
         }
-        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.loadNavBar()
+        }
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
-    func goNavBar() {
-      
+  
+    func loadNavBar() {
 //            Task {
 //                do {
 //                    try await auth.authenticate()
 //                    checkToken()
-//                    createUser()
+//                    createUserIfNeededUses()
                     let vc = NavBar()
                     let navigationController = UINavigationController(rootViewController: vc)
                     navigationController.modalPresentationStyle = .fullScreen
@@ -46,15 +54,17 @@ class OnboardingScreenVC: UIViewController {
 //                }
 //            }
         }
-//    
-//    private func createUser() {
-//        if MemoryApp.shared.userID == nil {
-//            let payload = CreateReqPay(name: nil, score: MemoryApp.shared.scorePoints)
-//            PostRequestService.shared.createUser(payload: payload) { [weak self] createResponse in
-//                guard let self = self else { return }
-//                MemoryApp.shared.userID = createResponse.id
-//            } errorCompletion: { error in
-//                print("Ошибка получени данных с бека")
+    
+//    private func createUserIfNeededUses() {
+//        if ud.userID == nil {
+//            let uuid = UUID().uuidString
+//            Task {
+//                do {
+//                    let player = try await post.createPlayerUser(username: uuid)
+//                    ud.userID = player.id
+//                } catch {
+//                    print("Ошибка создания пользователя: \(error.localizedDescription)")
+//                }
 //            }
 //        }
 //    }
@@ -65,5 +75,3 @@ class OnboardingScreenVC: UIViewController {
 //        }
 //    }
 }
-
-

@@ -8,10 +8,13 @@ extension UIFont {
     
     enum CustomFonts: String {
         case peralta = "Peralta"
+        case inter = "Inter"
     }
     
     enum CustomFontStyle: String {
         case regular = "-Regular"
+        case semiBold = "-SemiBold"
+        case medium = "-Medium"
     }
     
     static func customFont(
@@ -79,6 +82,31 @@ extension UILabel {
         // Устанавливаем gradient image как текстовый цвет
         self.textColor = UIColor(patternImage: gradientImage)
     }
+    
+    func setGradientHorizontalText(colors: [UIColor]) {
+        // Обновляем layout, чтобы получить правильные размеры
+        self.layoutIfNeeded()
+
+        // Убеждаемся, что размеры ненулевые
+        guard self.bounds.size != .zero else { return }
+
+        // Создаем CAGradientLayer
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = self.bounds
+        gradientLayer.colors = colors.map { $0.cgColor }
+        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.5)
+        gradientLayer.endPoint = CGPoint(x: 1, y: 0.5)
+
+        // Создаем image из gradient layer используя UIGraphicsImageRenderer
+        let renderer = UIGraphicsImageRenderer(bounds: gradientLayer.bounds)
+        let gradientImage = renderer.image { context in
+            gradientLayer.render(in: context.cgContext)
+        }
+
+        // Устанавливаем gradient image как текстовый цвет
+        self.textColor = UIColor(patternImage: gradientImage)
+    }
+    
 }
 
 extension UIButton {

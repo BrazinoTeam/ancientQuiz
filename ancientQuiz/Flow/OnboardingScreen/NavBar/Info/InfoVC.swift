@@ -19,8 +19,15 @@ class InfoVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+    }
     
-        
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        contentView.subTitleLabel.setGradientHorizontalText(colors: [.cGradOne, .cGradTwo, .cGradOne])
+        contentView.labelTwo.setGradientHorizontalText(colors: [.cGradOne, .cGradTwo, .cGradOne])
+        contentView.labelFour.setGradientHorizontalText(colors: [.cGradOne, .cGradTwo, .cGradOne])
+        contentView.labelSix.setGradientHorizontalText(colors: [.cGradOne, .cGradTwo, .cGradOne])
     }
     
 }

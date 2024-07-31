@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "god (6).png",
+      "filename" : "win.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "god (7).png",
+      "filename" : "win (1).png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "god (8).png",
+      "filename" : "win (2).png",
       "idiom" : "universal",
       "scale" : "3x"
     }

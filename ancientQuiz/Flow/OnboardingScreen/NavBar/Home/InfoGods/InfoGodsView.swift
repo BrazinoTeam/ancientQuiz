@@ -8,13 +8,14 @@ class InfoGodsView: UIView {
     
     private (set) var bgImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = .bgHome
+        imageView.image = .bgClassic
         return imageView
     }()
  
     private (set) var backBtn: UIButton = {
         let btn = UIButton()
         btn.setBackgroundImage(.btnBack, for: .normal)
+        btn.setBackgroundImage(.btnBackSelect, for: .highlighted)
         return btn
     }()
     
@@ -34,10 +35,10 @@ class InfoGodsView: UIView {
         let textView = UITextView()
         let textStyle = NSMutableParagraphStyle()
         textStyle.lineBreakMode = .byWordWrapping
-        textStyle.lineHeightMultiple = 1.13
+        textStyle.lineHeightMultiple = 1.24
 
         let attributes: [NSAttributedString.Key: Any] = [
-            .font: UIFont.systemFont(ofSize: 18, weight: .medium),
+            .font: UIFont.customFont(font: .inter, style: .medium, size: 18),
             .foregroundColor: UIColor.white,
             .paragraphStyle: textStyle
         ]
@@ -62,13 +63,6 @@ class InfoGodsView: UIView {
     let quizBtn: UIButton = {
         let button = UIButton()
         button.configureButton(withTitle: "Quiz", font: .customFont(font: .peralta, style: .regular, size: 32), titleColor: .white, normalImage: .btnNormal, highlightedImage: .btnSelect)
-        button.layer.cornerRadius = 35
-        button.layer.borderWidth = 5
-        button.layer.borderColor = UIColor.red.cgColor
-        button.layer.shadowColor = UIColor(red: 0.976, green: 0.471, blue: 0.216, alpha: 0.5).cgColor
-        button.layer.shadowOpacity = 1
-        button.layer.shadowRadius = 20
-        button.layer.shadowOffset = CGSize(width: 0, height: 2)
         return button
     }()
     

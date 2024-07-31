@@ -44,13 +44,6 @@ class HomeView: UIView {
     private (set) var btnOpen: UIButton = {
         let btn = UIButton()
         btn.configureButton(withTitle: "Open", font: .customFont(font: .peralta, style: .regular, size: 32), titleColor: .white, normalImage: .btnNormal, highlightedImage: .btnSelect)
-        btn.layer.cornerRadius = 35
-        btn.layer.borderWidth = 5
-        btn.layer.borderColor = UIColor.red.cgColor
-        btn.layer.shadowColor = UIColor(red: 0.976, green: 0.471, blue: 0.216, alpha: 0.5).cgColor
-        btn.layer.shadowOpacity = 1
-        btn.layer.shadowRadius = 20
-        btn.layer.shadowOffset = CGSize(width: 0, height: 2)
         return btn
     }()
     override init(frame: CGRect) {
@@ -95,12 +88,12 @@ class HomeView: UIView {
         godsCollectionView.snp.makeConstraints { make in
             make.left.right.equalToSuperview()
             make.height.equalTo(388.autoSize)
-            make.top.equalTo(pointCont.snp.bottom).offset(48.autoSize)
+            make.top.equalTo(pointCont.snp.bottom).offset(60.autoSize)
         }
         
         btnOpen.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(godsCollectionView.snp.bottom).offset(48.autoSize)
+            make.top.equalTo(godsCollectionView.snp.bottom).offset(32.autoSize)
             make.width.equalTo(353)
             make.height.equalTo(75)
         }

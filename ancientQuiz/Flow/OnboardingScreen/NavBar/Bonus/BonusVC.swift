@@ -175,7 +175,7 @@ class BonusVC: UIViewController {
 extension BonusVC {
     
     private func setupCircularProgressView() {
-        let progressView = CircularProgressView(radius: 150) // радиус 300 / 2
+        let progressView = CircularProgressView(radius: 150)
         contentView.addSubview(progressView)
         
         progressView.snp.makeConstraints { make in
@@ -183,7 +183,6 @@ extension BonusVC {
             make.size.equalTo(CGSize(width: 300, height: 300))
         }
         
-        // Обновите прогресс в зависимости от оставшегося времени
         updateProgress()
     }
 
