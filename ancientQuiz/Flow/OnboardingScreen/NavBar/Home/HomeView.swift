@@ -14,8 +14,6 @@ class HomeView: UIView {
         return imageView
     }()
     
-   
-    
     private (set) var pointCont: UIImageView = {
         let imageView = UIImageView()
         imageView.image = .imgPointsCont

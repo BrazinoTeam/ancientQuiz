@@ -6,11 +6,12 @@ import Foundation
 import UIKit
 import SnapKit
 
-class ProfileVC: UIViewController {
+class ProfileVC: UIViewController, UITextFieldDelegate {
     
     private var ud = UD.shared
     private let imagePicker = UIImagePickerController()
     private var fullScreenView: UIView?
+    private var nameView: UIView?
     private var isTextFieldTapped = false
     
     var contentView: ProfileView {
@@ -158,18 +159,7 @@ class ProfileVC: UIViewController {
         presentModalView(title: "Coin Collector", subtitle: "Collect a total of 1,000 coins", image: .imgAchiEleven)
       }
     @objc func tappeUpdateName() {
-        if contentView.btnEdit.backgroundImage(for: .normal) == UIImage(named: "checkBtn") {
-            //            updateName()
-            view.endEditing(true)
-            isTextFieldTapped = false
-            contentView.btnEdit.setBackgroundImage(UIImage(named: "btnEdit"), for: .normal)
-        } else {
-            contentView.profileTextField.becomeFirstResponder()
-            
-            contentView.btnEdit.setBackgroundImage(UIImage(named: "checkBtn"), for: .normal)
-            
-            isTextFieldTapped = true
-        }
+        presentUpdateNameView()
     }
     
     private func checkFotoLoad() {
@@ -297,6 +287,139 @@ class ProfileVC: UIViewController {
         }
     }
     
+    private func presentUpdateNameView() {
+        if nameView == nil {
+            nameView = UIView(frame: self.view.bounds)
+            nameView!.backgroundColor = .black.withAlphaComponent(0.8)
+            nameView!.alpha = 0
+            let viewConteiner = UIView()
+            nameView!.addSubview(viewConteiner)
+            
+            let imgBGSaveName = UIImageView(image: .imgContSaveName)
+            imgBGSaveName.contentMode = .scaleToFill
+            viewConteiner.addSubview(imgBGSaveName)
+            
+            
+            let titleLabel = UILabel()
+            titleLabel.text = "Edit Name"
+            titleLabel.font = .customFont(font: .peralta, style: .regular, size: 28)
+            titleLabel.numberOfLines = 0
+            titleLabel.textAlignment = .center
+            viewConteiner.addSubview(titleLabel)
+            
+            let imgBgTextField = UIImageView(image: .imgContTextField)
+            imgBgTextField.contentMode = .scaleToFill
+            viewConteiner.addSubview(imgBgTextField)
+            
+            let textField = UITextField()
+            let font = UIFont.customFont(font: .peralta, style: .regular, size: 24)
+            
+            let placeholderAttributes: [NSAttributedString.Key: Any] = [
+                .font: font,
+                .foregroundColor: UIColor.white.withAlphaComponent(0.5)
+            ]
+            
+            let placeholderText = NSAttributedString(string: "Enter your name", attributes: placeholderAttributes)
+            textField.attributedPlaceholder = placeholderText
+            
+    
+            
+            let textAttributes: [NSAttributedString.Key: Any] = [
+                .font: font,
+                .foregroundColor: UIColor.white,
+            ]
+            textField.font = UIFont.customFont(font: .peralta, style: .regular, size: 24)
+            textField.textColor = .white
+            textField.backgroundColor = .clear
+            textField.textAlignment = .center
+            textField.delegate = self
+            textField.returnKeyType = .done
+            textField.becomeFirstResponder()
+            viewConteiner.addSubview(textField)
+
+            let thanksBtn = UIButton()
+            thanksBtn.configureButton(withTitle: "Save", font: .customFont(font: .peralta, style: .regular, size: 32), titleColor: .white, normalImage: .btnNormal, highlightedImage: .btnSelect)
+            thanksBtn.addTarget(self, action: #selector(savedName), for: .touchUpInside)
+            nameView!.addSubview(thanksBtn)
+            
+            viewConteiner.snp.makeConstraints { make in
+                make.centerX.equalToSuperview()
+                make.centerY.equalToSuperview().offset(-60)
+                make.height.equalTo(290)
+                make.width.equalTo(353)
+            }
+            
+            imgBGSaveName.snp.makeConstraints { make in
+                make.edges.equalToSuperview()
+            }
+            
+            titleLabel.snp.makeConstraints { make in
+                make.top.equalToSuperview().offset(24)
+                make.centerX.equalToSuperview()
+            }
+            
+            imgBgTextField.snp.makeConstraints { make in
+                make.top.equalTo(titleLabel.snp.bottom).offset(32)
+                make.left.right.equalToSuperview().inset(20)
+            }
+            
+            textField.snp.makeConstraints { make in
+                make.centerY.equalTo(imgBgTextField)
+                make.left.right.equalTo(imgBgTextField).inset(16)
+            }
+        
+            thanksBtn.snp.makeConstraints { make in
+                make.top.equalTo(imgBgTextField.snp.bottom).offset(32)
+                make.centerX.equalToSuperview()
+                make.width.equalTo(312)
+                make.height.equalTo(80)
+            }
+            
+            self.view.addSubview(nameView!)
+        }
+        UIView.animate(withDuration: 0.5, animations: {
+            self.nameView!.alpha = 1
+        })
+    }
+    
+    internal func textFieldDidEndEditing(_ textField: UITextField) {
+        UD.shared.userName = textField.text
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        print("Клавиатура спрятана")
+        updateName()
+        return true
+    }
+    
+    @objc func savedName() {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.nameView?.alpha = 0
+        }) { _ in
+            self.nameView?.removeFromSuperview()
+            self.nameView = nil
+            self.contentView.labelUserName.text = "\(UD.shared.userName ?? "User Name")"
+            self.updateName()
+        }
+    }
+    
+    func updateName() {
+      
+        if UD.shared.userName != nil {
+            let payload = UpdatePayload(name: UD.shared.userName, score: nil)
+            PostRequest.shared.updateData(id: UD.shared.userID!, payload: payload) { result in
+                DispatchQueue.main.async {
+                    switch result {
+                    case .success(_):
+                        print("Success")
+                    case .failure(let failure):
+                        print("Error - \(failure.localizedDescription)")
+                    }
+                }
+            }
+        }
+    }
 }
 
 extension ProfileVC: UIImagePickerControllerDelegate {
@@ -332,11 +455,12 @@ extension ProfileVC: UIImagePickerControllerDelegate {
             contentView.btnUserPhoto.setBackgroundImage(image, for: .normal)
             saveImageToLocal(image: image)
         }
-        
+        checkFotoLoad()
         dismiss(animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        checkFotoLoad()
         dismiss(animated: true, completion: nil)
     }
 }

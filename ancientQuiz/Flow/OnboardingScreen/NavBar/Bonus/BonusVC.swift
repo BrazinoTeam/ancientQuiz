@@ -7,7 +7,7 @@ import SnapKit
 
 class BonusVC: UIViewController {
     
-    private let arrayImage: [UIImage] = [.imgPointsBonus, .imgCoinsBonus500, .imgLightningBonus]
+    private let arrayImage: [UIImage] = [.img100Points, .img1500Points, .img5000Points, .img500Points, .img700Points, .img1000Points]
     private var fullScreenViewBonus: UIView?
     private let ud = UD.shared
     private var isTime: Bool = true
@@ -44,56 +44,51 @@ class BonusVC: UIViewController {
         performAnimationCycle(count: 30)
     }
     
-    func presentModalView(subtitle: String, image: UIImage) {
+    func presentModalView(image: UIImage) {
         if fullScreenViewBonus == nil {
             fullScreenViewBonus = UIView(frame: self.view.bounds)
-            fullScreenViewBonus!.backgroundColor = .black.withAlphaComponent(0.8)
+            fullScreenViewBonus!.backgroundColor = .black.withAlphaComponent(0.4)
             fullScreenViewBonus!.alpha = 0
             
             let viewConteiner = UIView()
-            viewConteiner.backgroundColor = .white
-            viewConteiner.layer.cornerRadius = 8
-            viewConteiner.layer.borderWidth = 2
-            viewConteiner.layer.borderColor = UIColor.yellow.withAlphaComponent(0.6).cgColor
-            viewConteiner.layer.shadowColor = UIColor.yellow.withAlphaComponent(0.7).cgColor
-            viewConteiner.layer.shadowOpacity = 2
-            viewConteiner.layer.shadowOffset = CGSize(width: 4, height: 15)
-            viewConteiner.layer.shadowRadius = 20
+            viewConteiner.backgroundColor = .clear
             fullScreenViewBonus!.addSubview(viewConteiner)
+            
+            let bgImg = UIImageView(image: .imgWinContBonus)
+            bgImg.contentMode = .scaleToFill
+            viewConteiner.addSubview(bgImg)
             
             let titleLabel = UILabel()
             titleLabel.text = "Congratulations!"
-            titleLabel.font = .customFont(font: .peralta, style: .regular, size: 18)
-            titleLabel.textColor = .black
+            titleLabel.font = .customFont(font: .peralta, style: .regular, size: 28)
+            titleLabel.textColor = .white
             titleLabel.numberOfLines = 0
             titleLabel.textAlignment = .center
             viewConteiner.addSubview(titleLabel)
             
-            let imageBonusView = UIImageView(image: image)
-            imageBonusView.contentMode = .scaleAspectFit
+            let imageBonusView = UIImageView(image: .imgWin)
+            imageBonusView.contentMode = .scaleToFill
             viewConteiner.addSubview(imageBonusView)
             
-            let subtitleLabelView = UILabel()
-            subtitleLabelView.text = subtitle
-            subtitleLabelView.font = .customFont(font: .peralta, style: .regular, size: 12)
-            subtitleLabelView.textColor = .black
-            subtitleLabelView.numberOfLines = 0
-            subtitleLabelView.textAlignment = .center
-            viewConteiner.addSubview(subtitleLabelView)
+            let imgPointsCount = UIImageView(image: image)
+            imgPointsCount.contentMode = .scaleToFill
+            viewConteiner.addSubview(imgPointsCount)
             
             
             let backButton = UIButton()
-            backButton.setTitle("OK", for: .normal)
-            backButton.backgroundColor = .red
-            backButton.layer.cornerRadius = 20
+            backButton.configureButton(withTitle: "Thanks", font: .customFont(font: .peralta, style: .regular, size: 32), titleColor: .white, normalImage: .btnNormal, highlightedImage: .btnSelect)
             backButton.addTarget(self, action: #selector(tappedCloseBuy), for: .touchUpInside)
             fullScreenViewBonus!.addSubview(backButton)
             
             viewConteiner.snp.makeConstraints { make in
                 make.centerX.equalToSuperview()
-                make.centerY.equalToSuperview()
-                make.height.equalTo(469)
+                make.centerY.equalToSuperview().offset(-24)
+                make.height.equalTo(575)
                 make.width.equalTo(353)
+            }
+            
+            bgImg.snp.makeConstraints { make in
+                make.edges.equalToSuperview()
             }
             
             titleLabel.snp.makeConstraints { make in
@@ -101,22 +96,22 @@ class BonusVC: UIViewController {
                 make.centerX.equalToSuperview()
             }
             
-            subtitleLabelView.snp.makeConstraints { make in
-                make.top.equalTo(titleLabel.snp.bottom).offset(12)
+            imageBonusView.snp.makeConstraints { make in
+                make.top.equalTo(titleLabel.snp.bottom).offset(28)
                 make.centerX.equalToSuperview()
+                make.size.equalTo(245)
             }
             
-            imageBonusView.snp.makeConstraints { make in
-                make.centerX.equalToSuperview()
-                make.top.equalTo(subtitleLabelView.snp.bottom).offset(24)
-                make.size.equalTo(205)
+            imgPointsCount.snp.makeConstraints { make in
+                make.top.equalTo(imageBonusView.snp.bottom).offset(32)
+                make.centerX.equalTo(imageBonusView)
             }
             
             backButton.snp.makeConstraints { make in
-                make.top.equalTo(imageBonusView.snp.bottom).offset(32)
+                make.top.equalTo(imgPointsCount.snp.bottom).offset(32)
                 make.centerX.equalToSuperview()
-                make.height.equalTo(48)
-                make.width.equalTo(300)
+                make.height.equalTo(80)
+                make.width.equalTo(312)
             }
             
             self.view.addSubview(fullScreenViewBonus!)
@@ -137,19 +132,52 @@ class BonusVC: UIViewController {
         }
     }
     
+    func updateScore() {
+      
+       let payload = UpdatePayload(name: nil, score: UD.shared.scorePoints)
+        PostRequest.shared.updateData(id: UD.shared.userID!, payload: payload) { result in
+           DispatchQueue.main.async {
+               switch result {
+               case .success(_):
+                   print("Success")
+               case .failure(let failure):
+                   print("Error - \(failure.localizedDescription)")
+               }
+           }
+       }
+   }
+    
     private func performAnimationCycle(count: Int) {
         if count == 0 {
-            if contentView.countImage.image == UIImage(named: "imgPointsBonus") {
-                presentModalView(subtitle: "+100", image: .imgPointsBonus)
-            }  else if contentView.countImage.image == UIImage(named: "imgCoinsBonus500") {
-                presentModalView(subtitle: "+100", image: .imgCoinsBonus500)
-            } else if contentView.countImage.image == UIImage(named: "imgLightningBonus") {
-                presentModalView(subtitle: "+ 100", image: .imgLightningBonus)
+            if contentView.countImage.image == UIImage(named: "img100Points") {
+                presentModalView(image: .imgWin100Points)
+                ud.scorePoints += 100
+                updateScore()
+            }  else if contentView.countImage.image == UIImage(named: "img1500Points") {
+                presentModalView(image: .imgWin1500Points)
+                ud.scorePoints += 1500
+                updateScore()
+            } else if contentView.countImage.image == UIImage(named: "img5000Points") {
+                presentModalView(image: .imgWin5000Points)
+                ud.scorePoints += 5000
+                updateScore()
+            } else if contentView.countImage.image == UIImage(named: "img500Points") {
+                presentModalView(image: .imgWin500Points)
+                ud.scorePoints += 500
+                updateScore()
+            } else if contentView.countImage.image == UIImage(named: "img700Points") {
+                presentModalView(image: .imgWin700Points)
+                ud.scorePoints += 700
+                updateScore()
+            } else if contentView.countImage.image == UIImage(named: "img1000Points") {
+                presentModalView(image: .imgWin1000Points)
+                ud.scorePoints += 1000
+                updateScore()
             }
             return
         }
 
-        let originalCenter = CGPoint(x: contentView.slotView.bounds.midX, y: contentView.slotView.bounds.midY)
+        let originalCenter = CGPoint(x: contentView.slotView.bounds.midX, y: contentView.slotView.bounds.midY + 24)
 
         UIView.animate(withDuration: 0.05, animations: {
             self.contentView.countImage.center = CGPoint(x: originalCenter.x, y: self.contentView.slotView.bounds.maxY + self.contentView.countImage.frame.height)

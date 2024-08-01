@@ -31,36 +31,10 @@ class ProfileView: UIView, UITextFieldDelegate {
         return btn
     }()
     
-    private(set) lazy var profileTextField: UITextField = {
-        let textField = UITextField()
-        let font = UIFont.customFont(font: .peralta, style: .regular, size: 20)
-        let fontSize = CGFloat(20)
-        
-        let placeholderAttributes: [NSAttributedString.Key: Any] = [
-            .font: font,
-            .foregroundColor: UIColor.white.withAlphaComponent(0.5),
-            .kern: fontSize * 0.04
-        ]
-        
-        let placeholderText = NSAttributedString(string: "User #\(UD.shared.userID ?? 1)", attributes: placeholderAttributes)
-        textField.attributedPlaceholder = placeholderText
-
-        if let savedUserName = UD.shared.userID {
-            textField.placeholder = "user#\(savedUserName)"
-        }
-        
-        let textAttributes: [NSAttributedString.Key: Any] = [
-            .font: font,
-            .foregroundColor: UIColor.white,
-            .kern: fontSize * 0.04
-        ]
-        textField.font = .customFont(font: .peralta, style: .regular, size: 20)
-        textField.textColor = .white
-        textField.backgroundColor = .clear
-        textField.textAlignment = .left
-        textField.delegate = self
-        textField.returnKeyType = .done
-        return textField
+    private (set) var labelUserName: UILabel = {
+        let label = UILabel.createLabel(withText: "User Name", font: .customFont(font: .peralta, style: .regular, size: 20), textColor: .white, paragraphSpacing: 1, lineHeightMultiple: 1)
+        label.textAlignment = .left
+        return label
     }()
     
     private (set) var btnEdit: UIButton = {
@@ -209,7 +183,6 @@ class ProfileView: UIView, UITextFieldDelegate {
         super.init(frame: frame)
         setupUI()
         setupConstraints()
-        saveName()
         addGradientLayer(to: leftView)
         addGradientLayer(to: rightView)
 
@@ -221,10 +194,8 @@ class ProfileView: UIView, UITextFieldDelegate {
     }
     
     private func setupUI() {
-        [bgImage, titleLabel, containerProfile, containerAnaliz, scrollView] .forEach(addSubview(_:))
-        containerProfile.addSubview(btnUserPhoto)
-        containerProfile.addSubview(profileTextField)
-        containerProfile.addSubview(btnEdit)
+        [bgImage, titleLabel, containerProfile, containerAnaliz, btnUserPhoto, btnEdit, scrollView] .forEach(addSubview(_:))
+        containerProfile.addSubview(labelUserName)
         containerAnaliz.addSubview(labelTotalCoints)
         containerAnaliz.addSubview(labelQuizzes)
         containerAnaliz.addSubview(labelUnlocked)
@@ -268,12 +239,12 @@ class ProfileView: UIView, UITextFieldDelegate {
         }
         
         btnUserPhoto.snp.makeConstraints { make in
-            make.centerY.equalToSuperview()
-            make.left.equalToSuperview().offset(16)
+            make.centerY.equalTo(containerProfile)
+            make.left.equalTo(containerProfile.snp.left).offset(16)
             make.size.equalTo(52)
         }
         
-        profileTextField.snp.makeConstraints { make in
+        labelUserName.snp.makeConstraints { make in
             make.centerY.equalTo(btnUserPhoto)
             make.left.equalTo(btnUserPhoto.snp.right).offset(16)
             make.width.equalTo(216)
@@ -282,7 +253,7 @@ class ProfileView: UIView, UITextFieldDelegate {
         
         btnEdit.snp.makeConstraints { make in
             make.centerY.equalTo(btnUserPhoto)
-            make.right.equalToSuperview().offset(-16)
+            make.right.equalTo(containerProfile.snp.right).offset(-16)
         }
         
         containerAnaliz.snp.makeConstraints { make in
@@ -438,21 +409,5 @@ class ProfileView: UIView, UITextFieldDelegate {
         super.layoutSubviews()
         leftViewGradientLayer?.frame = leftView.bounds
         rightViewGradientLayer?.frame = rightView.bounds
-    }
-    
-    private func saveName() {
-        if let savedUserName = UD.shared.userName {
-            profileTextField.text = savedUserName
-        }
-    }
-
-    
-    internal func textFieldDidEndEditing(_ textField: UITextField) {
-        UD.shared.userName = textField.text
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder() // Закрытие клавиатуры
-        return true
     }
 }

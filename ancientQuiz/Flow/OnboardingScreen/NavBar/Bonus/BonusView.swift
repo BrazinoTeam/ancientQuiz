@@ -15,7 +15,7 @@ class BonusView: UIView {
     
     private (set) var imgBackground: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = .bgHome
+        imageView.image = .bgClassic
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
@@ -29,19 +29,10 @@ class BonusView: UIView {
         return label
     }()
     
-    private (set) var subTitleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Rotate the wheel\nto receive the bonus for today"
-        label.font = .customFont(font: .peralta, style: .regular, size: 12)
-        label.textAlignment = .center
-        label.numberOfLines = 0
-        label.textColor = .white
-        return label
-    }()
-    
     private (set) var countImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = .imgPointsBonus
+        imageView.image = .img100Points
+        imageView.contentMode = .scaleToFill
         return imageView
     }()
     
@@ -60,7 +51,7 @@ class BonusView: UIView {
     
     private (set) var bonusBtn: UIButton = {
         let btn = UIButton()
-        btn.configureButton(withTitle: "Get Bonus", font: .customFont(font: .peralta, style: .regular, size: 20), titleColor: .white, normalImage: .btnNormal, highlightedImage: .btnSelect)
+        btn.configureButton(withTitle: "Get Bonus", font: .customFont(font: .peralta, style: .regular, size: 32), titleColor: .white, normalImage: .btnNormal, highlightedImage: .btnSelect)
         return btn
     }()
     
@@ -73,7 +64,7 @@ class BonusView: UIView {
     
     private (set) var timeBgImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = .bgHome
+        imageView.image = .bgClassic
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
@@ -111,7 +102,7 @@ class BonusView: UIView {
     private func setupUI() {
 
         [dayliView, timeView] .forEach(addSubview(_:))
-        [imgBackground, titleLabel, subTitleLabel, slotImage, slotView, bonusBtn] .forEach(dayliView.addSubview(_:))
+        [imgBackground, titleLabel, slotImage, slotView, bonusBtn] .forEach(dayliView.addSubview(_:))
 
         
         slotView.addSubview(countImage)
@@ -131,12 +122,7 @@ class BonusView: UIView {
         
        
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(24.autoSize)
-            make.centerX.equalToSuperview()
-        }
-        
-        subTitleLabel.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom)
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(124.autoSize)
             make.centerX.equalToSuperview()
         }
 
@@ -154,13 +140,12 @@ class BonusView: UIView {
         
         countImage.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview().offset(8.autoSize)
-            make.size.equalTo(100.autoSize)
+            make.centerY.equalToSuperview().offset(24)
         }
 
         bonusBtn.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview().offset(120.autoSize)
+            make.top.equalTo(slotImage.snp.bottom).offset(48)
         }
         
         timeView.snp.makeConstraints { make in

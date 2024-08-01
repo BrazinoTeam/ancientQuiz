@@ -103,7 +103,7 @@ class InfoQuizVC: UIViewController {
             if self.countAnswers >= 10 {
                 if self.isRightCountAnswers >= 6 {
                     UD.shared.scorePoints += 100
-//                    self.updateScore()
+                    self.updateScore()
                     self.goToWin()
                 } else {
                     self.sorryLose()
@@ -185,20 +185,20 @@ class InfoQuizVC: UIViewController {
         }
     }
     
-//    func updateScore() {
-//      
-//       let payload = UpdatePayload(name: nil, score: MemoryApp.shared.scorePoints)
-//        PostRequestService.shared.updateData(id: MemoryApp.shared.userID!, payload: payload) { result in
-//           DispatchQueue.main.async {
-//               switch result {
-//               case .success(_):
-//                   print("Success")
-//               case .failure(let failure):
-//                   print("Error - \(failure.localizedDescription)")
-//               }
-//           }
-//       }
-//   }
+    func updateScore() {
+      
+       let payload = UpdatePayload(name: nil, score: UD.shared.scorePoints)
+        PostRequest.shared.updateData(id: UD.shared.userID!, payload: payload) { result in
+           DispatchQueue.main.async {
+               switch result {
+               case .success(_):
+                   print("Success")
+               case .failure(let failure):
+                   print("Error - \(failure.localizedDescription)")
+               }
+           }
+       }
+   }
     
     private func goToWin() {
         let vc = WinQuizVC()

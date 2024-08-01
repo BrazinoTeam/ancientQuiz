@@ -79,8 +79,8 @@ class InfoView: UIView {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineHeightMultiple = 1
         paragraphStyle.paragraphSpacing = 1
-        paragraphStyle.headIndent = 18 // отступ для всех строк
-        paragraphStyle.firstLineHeadIndent = 0 // отступ для первой строки
+        paragraphStyle.headIndent = 18
+        paragraphStyle.firstLineHeadIndent = 0
 
         let attributedString = NSMutableAttributedString(string: fullText, attributes: [
             .font: UIFont.customFont(font: .inter, style: .semiBold, size: 14),

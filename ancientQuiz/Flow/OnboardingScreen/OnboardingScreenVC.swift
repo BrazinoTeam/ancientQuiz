@@ -9,8 +9,8 @@ import SwiftUI
 
 class OnboardingScreenVC: UIViewController {
     
-//    private let auth = AuthTokenService.shared
-//    private let post = PostRequestService.shared
+    private let tokenService = Auth.shared
+    private let create = PostRequest.shared
     private let ud = UD.shared
     
     private var onboardVM: OnboardVM = OnboardVM()
@@ -33,45 +33,43 @@ class OnboardingScreenVC: UIViewController {
         DispatchQueue.main.async {
             self.onboardVM.isAnimating = true
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.loadNavBar()
         }
     }
   
     func loadNavBar() {
-//            Task {
-//                do {
-//                    try await auth.authenticate()
-//                    checkToken()
-//                    createUserIfNeededUses()
+            Task {
+                do {
+                    try await tokenService.authenticate()
+                    checkToken()
+                    createUser()
                     let vc = NavBar()
                     let navigationController = UINavigationController(rootViewController: vc)
                     navigationController.modalPresentationStyle = .fullScreen
                     present(navigationController, animated: true)
                     navigationController.setNavigationBarHidden(true, animated: false)
-//                } catch {
-//                    print("Error: \(error.localizedDescription)")
-//                }
-//            }
+                } catch {
+                    print("Error: \(error.localizedDescription)")
+                }
+            }
         }
     
-//    private func createUserIfNeededUses() {
-//        if ud.userID == nil {
-//            let uuid = UUID().uuidString
-//            Task {
-//                do {
-//                    let player = try await post.createPlayerUser(username: uuid)
-//                    ud.userID = player.id
-//                } catch {
-//                    print("Ошибка создания пользователя: \(error.localizedDescription)")
-//                }
-//            }
-//        }
-//    }
-//
-//    private func checkToken() {
-//        guard let token = auth.token else {
-//            return
-//        }
-//    }
+    private func createUser() {
+        if UD.shared.userID == nil {
+            let payload = CreateReqPay(name: nil, score: UD.shared.scorePoints)
+            create.createUser(payload: payload) { [weak self] createResponse in
+                guard let self = self else { return }
+                UD.shared.userID = createResponse.id
+            } errorCompletion: { error in
+                print("Ошибка получени данных с бека")
+            }
+        }
+    }
+
+    private func checkToken() {
+        guard let token = tokenService.token else {
+            return
+        }
+    }
 }

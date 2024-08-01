@@ -23,6 +23,12 @@
 		182BD1A92C5A4C790038B9D1 /* OnboardingProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182BD1A82C5A4C790038B9D1 /* OnboardingProgressBarView.swift */; };
 		182BD1AB2C5A4D1B0038B9D1 /* Extension+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182BD1AA2C5A4D1B0038B9D1 /* Extension+Color.swift */; };
 		182BD1AD2C5A4D240038B9D1 /* Extension+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182BD1AC2C5A4D240038B9D1 /* Extension+View.swift */; };
+		182BD1B02C5B9B0F0038B9D1 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182BD1AF2C5B9B0F0038B9D1 /* Auth.swift */; };
+		182BD1B22C5BB05B0038B9D1 /* PostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182BD1B12C5BB05B0038B9D1 /* PostRequest.swift */; };
+		182BD1B42C5BB0AC0038B9D1 /* RequestPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182BD1B32C5BB0AC0038B9D1 /* RequestPayload.swift */; };
+		182BD1B62C5BB1940038B9D1 /* AllGamers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182BD1B52C5BB1940038B9D1 /* AllGamers.swift */; };
+		182BD1B82C5BB1AC0038B9D1 /* Gamer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182BD1B72C5BB1AC0038B9D1 /* Gamer.swift */; };
+		182BD1BA2C5BB24A0038B9D1 /* LBCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182BD1B92C5BB24A0038B9D1 /* LBCell.swift */; };
 		18D5D21E2C53A8E10012CFD4 /* InfoGodsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D5D21D2C53A8E10012CFD4 /* InfoGodsVC.swift */; };
 		18D5D2202C53A8E60012CFD4 /* InfoGodsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D5D21F2C53A8E60012CFD4 /* InfoGodsView.swift */; };
 		18D5D2222C53A8FB0012CFD4 /* QuizGodsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D5D2212C53A8FB0012CFD4 /* QuizGodsVC.swift */; };
@@ -69,6 +75,12 @@
 		182BD1A82C5A4C790038B9D1 /* OnboardingProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingProgressBarView.swift; sourceTree = "<group>"; };
 		182BD1AA2C5A4D1B0038B9D1 /* Extension+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Color.swift"; sourceTree = "<group>"; };
 		182BD1AC2C5A4D240038B9D1 /* Extension+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+View.swift"; sourceTree = "<group>"; };
+		182BD1AF2C5B9B0F0038B9D1 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		182BD1B12C5BB05B0038B9D1 /* PostRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRequest.swift; sourceTree = "<group>"; };
+		182BD1B32C5BB0AC0038B9D1 /* RequestPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPayload.swift; sourceTree = "<group>"; };
+		182BD1B52C5BB1940038B9D1 /* AllGamers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGamers.swift; sourceTree = "<group>"; };
+		182BD1B72C5BB1AC0038B9D1 /* Gamer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gamer.swift; sourceTree = "<group>"; };
+		182BD1B92C5BB24A0038B9D1 /* LBCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBCell.swift; sourceTree = "<group>"; };
 		18D5D21D2C53A8E10012CFD4 /* InfoGodsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoGodsVC.swift; sourceTree = "<group>"; };
 		18D5D21F2C53A8E60012CFD4 /* InfoGodsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoGodsView.swift; sourceTree = "<group>"; };
 		18D5D2212C53A8FB0012CFD4 /* QuizGodsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizGodsVC.swift; sourceTree = "<group>"; };
@@ -250,6 +262,8 @@
 			children = (
 				18F790582C527B0700ED195E /* LeaderboardVC.swift */,
 				18F7905A2C527B0B00ED195E /* LeaderboardView.swift */,
+				182BD1B92C5BB24A0038B9D1 /* LBCell.swift */,
+				182BD1B72C5BB1AC0038B9D1 /* Gamer.swift */,
 			);
 			path = Leaderboard;
 			sourceTree = "<group>";
@@ -291,6 +305,10 @@
 		18F7906F2C527EA200ED195E /* ServiceBackEnd */ = {
 			isa = PBXGroup;
 			children = (
+				182BD1AF2C5B9B0F0038B9D1 /* Auth.swift */,
+				182BD1B12C5BB05B0038B9D1 /* PostRequest.swift */,
+				182BD1B32C5BB0AC0038B9D1 /* RequestPayload.swift */,
+				182BD1B52C5BB1940038B9D1 /* AllGamers.swift */,
 			);
 			path = ServiceBackEnd;
 			sourceTree = "<group>";
@@ -387,14 +405,18 @@
 			files = (
 				18F790572C527B0000ED195E /* BonusView.swift in Sources */,
 				18F790552C527AFC00ED195E /* BonusVC.swift in Sources */,
+				182BD1B62C5BB1940038B9D1 /* AllGamers.swift in Sources */,
 				18F790512C527AF300ED195E /* ProfileVC.swift in Sources */,
 				182BD1A92C5A4C790038B9D1 /* OnboardingProgressBarView.swift in Sources */,
 				18D5D2202C53A8E60012CFD4 /* InfoGodsView.swift in Sources */,
+				182BD1B22C5BB05B0038B9D1 /* PostRequest.swift in Sources */,
 				18F790732C527EED00ED195E /* Font + Extension.swift in Sources */,
 				182BD1AB2C5A4D1B0038B9D1 /* Extension+Color.swift in Sources */,
 				181642E32C57CEFB00F68824 /* WinQuizVC.swift in Sources */,
 				18F7905D2C527B1200ED195E /* InfoVC.swift in Sources */,
+				182BD1B82C5BB1AC0038B9D1 /* Gamer.swift in Sources */,
 				181642E52C57CEFF00F68824 /* WinQuizView.swift in Sources */,
+				182BD1B02C5B9B0F0038B9D1 /* Auth.swift in Sources */,
 				18F7905F2C527B1600ED195E /* InfoView.swift in Sources */,
 				181642E12C57CEF500F68824 /* LoseQuizView.swift in Sources */,
 				182BD1A52C5A4C510038B9D1 /* OnboardingScreen.swift in Sources */,
@@ -402,6 +424,7 @@
 				18F790592C527B0700ED195E /* LeaderboardVC.swift in Sources */,
 				18D5D2242C53A8FF0012CFD4 /* QuizGodsView.swift in Sources */,
 				181642DB2C57C6D100F68824 /* QuizOptionCell.swift in Sources */,
+				182BD1BA2C5BB24A0038B9D1 /* LBCell.swift in Sources */,
 				182BD1AD2C5A4D240038B9D1 /* Extension+View.swift in Sources */,
 				18F7904D2C527AE800ED195E /* HomeVC.swift in Sources */,
 				18D5D2222C53A8FB0012CFD4 /* QuizGodsVC.swift in Sources */,
@@ -420,6 +443,7 @@
 				181642DF2C57CEF100F68824 /* LoseQuizVC.swift in Sources */,
 				18F790762C527F8B00ED195E /* UD.swift in Sources */,
 				18F790332C5279DB00ED195E /* SceneDelegate.swift in Sources */,
+				182BD1B42C5BB0AC0038B9D1 /* RequestPayload.swift in Sources */,
 				182BD1A72C5A4C620038B9D1 /* OnboardingScreenViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
