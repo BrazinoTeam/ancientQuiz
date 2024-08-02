@@ -4,6 +4,8 @@ import SnapKit
 
 class ProfileView: UIView, UITextFieldDelegate {
     
+    private let screenHeight = UIScreen.main.bounds.height
+    
     private (set) var bgImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = .bgClassic
@@ -307,9 +309,17 @@ class ProfileView: UIView, UITextFieldDelegate {
         }
         
         scrollView.snp.makeConstraints { make in
-            make.top.equalTo(containerAnaliz.snp.bottom).offset(32)
+            if screenHeight <= 812 {
+                make.top.equalTo(containerAnaliz.snp.bottom).offset(8)
+            } else {
+                make.top.equalTo(containerAnaliz.snp.bottom).offset(32.autoSize)
+            }
             make.left.right.equalToSuperview()
-            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-80)
+            if screenHeight <= 812 {
+                make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-103)
+            } else {
+                make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-80)
+            }
         }
         
         contentView.snp.makeConstraints { make in
@@ -380,14 +390,22 @@ class ProfileView: UIView, UITextFieldDelegate {
             make.left.equalToSuperview().offset(20)
             make.top.equalTo(achivSeven.snp.bottom).offset(8)
             make.size.equalTo(109)
-            make.bottom.equalToSuperview().offset(-20)
+            if screenHeight <= 812 {
+                make.bottom.equalToSuperview().offset(-32)
+            } else {
+                make.bottom.equalToSuperview().offset(-24)
+            }
         }
         
         achivEleven.snp.makeConstraints { make in
             make.left.equalTo(achivTen.snp.right).offset(8)
             make.top.equalTo(achivSeven.snp.bottom).offset(8)
             make.size.equalTo(109)
-            make.bottom.equalToSuperview().offset(-20)
+            if screenHeight <= 812 {
+                make.bottom.equalToSuperview().offset(-32)
+            } else {
+                make.bottom.equalToSuperview().offset(-24)
+            }
         }
     }
     

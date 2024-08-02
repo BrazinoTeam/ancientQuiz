@@ -41,7 +41,7 @@ class OnboardingScreenVC: UIViewController {
     func loadNavBar() {
             Task {
                 do {
-                    try await tokenService.authenticate()
+                    try await tokenService.tokenAuth()
                     checkToken()
                     createUser()
                     let vc = NavBar()

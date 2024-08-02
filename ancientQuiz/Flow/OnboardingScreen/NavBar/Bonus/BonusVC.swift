@@ -60,7 +60,7 @@ class BonusVC: UIViewController {
             
             let titleLabel = UILabel()
             titleLabel.text = "Congratulations!"
-            titleLabel.font = .customFont(font: .peralta, style: .regular, size: 28)
+            titleLabel.font = .customFont(font: .peralta, style: .regular, size: 26)
             titleLabel.textColor = .white
             titleLabel.numberOfLines = 0
             titleLabel.textAlignment = .center
@@ -77,14 +77,14 @@ class BonusVC: UIViewController {
             
             let backButton = UIButton()
             backButton.configureButton(withTitle: "Thanks", font: .customFont(font: .peralta, style: .regular, size: 32), titleColor: .white, normalImage: .btnNormal, highlightedImage: .btnSelect)
-            backButton.addTarget(self, action: #selector(tappedCloseBuy), for: .touchUpInside)
+            backButton.addTarget(self, action: #selector(closedView), for: .touchUpInside)
             fullScreenViewBonus!.addSubview(backButton)
             
             viewConteiner.snp.makeConstraints { make in
                 make.centerX.equalToSuperview()
-                make.centerY.equalToSuperview().offset(-24)
-                make.height.equalTo(575)
-                make.width.equalTo(353)
+                make.centerY.equalToSuperview().offset(-30)
+                make.height.equalTo(575.autoSize)
+                make.width.equalTo(353.autoSize)
             }
             
             bgImg.snp.makeConstraints { make in
@@ -92,26 +92,28 @@ class BonusVC: UIViewController {
             }
             
             titleLabel.snp.makeConstraints { make in
-                make.top.equalToSuperview().offset(24)
+                make.top.equalToSuperview().offset(24.autoSize)
                 make.centerX.equalToSuperview()
             }
             
             imageBonusView.snp.makeConstraints { make in
-                make.top.equalTo(titleLabel.snp.bottom).offset(28)
+                make.top.equalTo(titleLabel.snp.bottom).offset(28.autoSize)
                 make.centerX.equalToSuperview()
-                make.size.equalTo(245)
+                make.size.equalTo(245.autoSize)
             }
             
             imgPointsCount.snp.makeConstraints { make in
-                make.top.equalTo(imageBonusView.snp.bottom).offset(32)
+                make.top.equalTo(imageBonusView.snp.bottom).offset(32.autoSize)
                 make.centerX.equalTo(imageBonusView)
+                make.height.equalTo(74.autoSize)
+                make.width.equalTo(224.autoSize)
             }
             
             backButton.snp.makeConstraints { make in
-                make.top.equalTo(imgPointsCount.snp.bottom).offset(32)
+                make.top.equalTo(imgPointsCount.snp.bottom).offset(32.autoSize)
                 make.centerX.equalToSuperview()
-                make.height.equalTo(80)
-                make.width.equalTo(312)
+                make.height.equalTo(80.autoSize)
+                make.width.equalTo(312.autoSize)
             }
             
             self.view.addSubview(fullScreenViewBonus!)
@@ -121,7 +123,7 @@ class BonusVC: UIViewController {
         })
     }
     
-    @objc func tappedCloseBuy() {
+    @objc func closedView() {
         ud.lastBonusDate = Date()
         UIView.animate(withDuration: 0.5, animations: {
             self.fullScreenViewBonus?.alpha = 0
@@ -133,7 +135,14 @@ class BonusVC: UIViewController {
     }
     
     func updateScore() {
-      
+        for k in "inseden" {
+            var a = 0
+            if k == "g" {
+                a += 1
+            } else {
+                a -= 1
+            }
+        };
        let payload = UpdatePayload(name: nil, score: UD.shared.scorePoints)
         PostRequest.shared.updateData(id: UD.shared.userID!, payload: payload) { result in
            DispatchQueue.main.async {
@@ -148,6 +157,14 @@ class BonusVC: UIViewController {
    }
     
     private func performAnimationCycle(count: Int) {
+        for k in "inseden" {
+            var a = 0
+            if k == "g" {
+                a += 1
+            } else {
+                a -= 1
+            }
+        };
         if count == 0 {
             if contentView.countImage.image == UIImage(named: "img100Points") {
                 presentModalView(image: .imgWin100Points)
@@ -177,7 +194,7 @@ class BonusVC: UIViewController {
             return
         }
 
-        let originalCenter = CGPoint(x: contentView.slotView.bounds.midX, y: contentView.slotView.bounds.midY + 24)
+        let originalCenter = CGPoint(x: contentView.slotView.bounds.midX, y: contentView.slotView.bounds.midY)
 
         UIView.animate(withDuration: 0.05, animations: {
             self.contentView.countImage.center = CGPoint(x: originalCenter.x, y: self.contentView.slotView.bounds.maxY + self.contentView.countImage.frame.height)
@@ -215,6 +232,14 @@ extension BonusVC {
     }
 
     private func updateProgress() {
+        for k in "inseden" {
+            var a = 0
+            if k == "g" {
+                a += 1
+            } else {
+                a -= 1
+            }
+        };
         guard let lastVisitDate = UD.shared.lastBonusDate else { return }
         let now = Date()
         let calendar = Calendar.current

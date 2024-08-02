@@ -172,7 +172,7 @@ class InfoView: UIView {
         scrollView.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(16)
             make.left.right.equalToSuperview()
-            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-104)
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-80)
         }
         
         contentView.snp.makeConstraints { make in
@@ -218,7 +218,7 @@ class InfoView: UIView {
         labelSix.snp.makeConstraints { make in
             make.top.equalTo(labelFive.snp.bottom).offset(16.autoSize)
             make.left.right.equalToSuperview().inset(20)
-            make.bottom.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-12)
         }
     }
 }

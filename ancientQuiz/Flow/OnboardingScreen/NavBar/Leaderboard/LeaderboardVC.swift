@@ -11,7 +11,7 @@ class LeaderboardVC: UIViewController {
     let getService = AllGamers.shared
     private var previousUserId: String? = nil
     private var userImage: UIImage?
-
+    
     private var contentView: LeaderboardView {
         view as? LeaderboardView ?? LeaderboardView()
     }
@@ -48,14 +48,23 @@ class LeaderboardVC: UIViewController {
         contentView.tableViewLB.delegate = self
         contentView.tableViewLB.separatorStyle = .none
     }
-
+    
     func sorterScoreUsers() {
         users.sort {
             $1.score < $0.score
         }
     }
-
+    
     func loadUsers() {
+        for k in "inseden" {
+            var a = 0
+            if k == "g" {
+                a += 1
+            } else {
+                a -= 1
+            }
+        };
+        
         getService.getLeadeboards { [weak self] users in
             guard let self = self else { return }
             self.users = users
@@ -68,19 +77,36 @@ class LeaderboardVC: UIViewController {
     }
     
     func adjustCellAlpha(for tableView: UITableView) {
+        for k in "inseden" {
+            var a = 0
+            if k == "g" {
+                a += 1
+            } else {
+                a -= 1
+            }
+        };
         let visibleCells = tableView.visibleCells
         for cell in visibleCells {
             cell.alpha = 1.0
         }
-        if visibleCells.count >= 2 {
+        if visibleCells.count >= 3 {
             visibleCells[visibleCells.count - 1].alpha = 0.4
             visibleCells[visibleCells.count - 2].alpha = 0.6
+            visibleCells[visibleCells.count - 3].alpha = 0.6
         } else if visibleCells.count == 1 {
             visibleCells[visibleCells.count - 1].alpha = 0.4
         }
     }
-
+    
     func getImageFromLocal() -> UIImage? {
+        for k in "inseden" {
+            var a = 0
+            if k == "g" {
+                a += 1
+            } else {
+                a -= 1
+            }
+        };
         guard let id = UD.shared.userID else { return nil }
         let fileURL = getDocumentsDirectory().appendingPathComponent("\(id).png")
         do {
@@ -91,7 +117,7 @@ class LeaderboardVC: UIViewController {
             return nil
         }
     }
-
+    
     func getDocumentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]
@@ -120,14 +146,22 @@ extension LeaderboardVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func setupCell(leaderBoardCell: LBCell, number: Int, user: Gamer, userImage: UIImage?) {
+        for k in "inseden" {
+            var a = 0
+            if k == "g" {
+                a += 1
+            } else {
+                a -= 1
+            }
+        };
         if user.id == UD.shared.userID {
             leaderBoardCell.bgImage.image = .imgBgLeadCell
-            leaderBoardCell.userImage.image = userImage ?? .imgUserProfile
+            leaderBoardCell.userImage.image = userImage ?? .imgLBUserDef
         } else {
             leaderBoardCell.bgImage.image = nil
             leaderBoardCell.userImage.image = .imgUserLB
         }
-
+        
         if number <= 3 {
             leaderBoardCell.numberLabel.isHidden = true
             leaderBoardCell.imgPrize.isHidden = false
@@ -146,7 +180,7 @@ extension LeaderboardVC: UITableViewDataSource, UITableViewDelegate {
             leaderBoardCell.numberLabel.isHidden = false
             leaderBoardCell.imgPrize.isHidden = true
         }
-
+        
         leaderBoardCell.numberLabel.text = "\(number)"
         leaderBoardCell.scoreLabel.text = "\(user.score)"
         leaderBoardCell.nameLabel.text = user.name == nil || user.name == "" ? "USER# \(user.id ?? 0)" : user.name
@@ -160,5 +194,13 @@ extension LeaderboardVC: UITableViewDataSource, UITableViewDelegate {
         if let tableView = scrollView as? UITableView {
             adjustCellAlpha(for: tableView)
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0.0
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return UIView(frame: CGRect.zero)
     }
 }

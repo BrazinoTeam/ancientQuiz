@@ -19,7 +19,14 @@ class InfoVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        for k in "inseden" {
+            var a = 0
+            if k == "g" {
+                a += 1
+            } else {
+                a -= 1
+            }
+        };
     }
     
     override func viewDidLayoutSubviews() {

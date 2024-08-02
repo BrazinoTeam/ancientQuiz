@@ -67,7 +67,7 @@ class WinQuizView: UIView {
         }
         
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(48)
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(24.autoSize)
             make.left.right.equalToSuperview().inset(20)
         }
         
@@ -77,21 +77,23 @@ class WinQuizView: UIView {
         }
         
         imgPointsWin.snp.makeConstraints { make in
-            make.top.equalTo(subTitleLabel.snp.bottom).offset(-8)
+            make.top.equalTo(subTitleLabel.snp.bottom).offset(-8.autoSize)
             make.centerX.equalToSuperview()
+            make.width.equalTo(249.autoSize)
+            make.height.equalTo(136.autoSize)
         }
         
         imgWinner.snp.makeConstraints { make in
-            make.top.equalTo(imgPointsWin.snp.bottom).offset(-8)
+            make.top.equalTo(imgPointsWin.snp.bottom).offset(-8.autoSize)
             make.left.right.equalToSuperview().inset(20)
-            make.size.equalTo(313)
+            make.size.equalTo(367.autoSize)
         }
         
         btnOk.snp.makeConstraints { make in
-            make.top.equalTo(imgWinner.snp.bottom).offset(32.autoSize)
+            make.top.equalTo(imgWinner.snp.bottom).offset(16.autoSize)
             make.centerX.equalToSuperview()
-            make.width.equalTo(353)
-            make.height.equalTo(80)
+            make.width.equalTo(353.autoSize)
+            make.height.equalTo(80.autoSize)
         }
     }
 }

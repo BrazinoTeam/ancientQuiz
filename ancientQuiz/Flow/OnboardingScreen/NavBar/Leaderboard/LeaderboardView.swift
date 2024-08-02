@@ -56,33 +56,20 @@ class LeaderboardView: UIView {
         return imageView
     }()
     
-    private (set) var gradientTextView: UIView = {
-        let view = UIView()
-        view.isUserInteractionEnabled = false
-        return view
-    }()
-    
-    private var gradientLayer: CAGradientLayer?
-
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
         setupConstraints()
-        setupGradientLayer()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        gradientLayer?.frame = tableViewLB.bounds
-    }
     
     private func setupUI() {
    
-        [bgImage, pointCont, pointsImg, blurView, tableViewLB, lbImage, gradientTextView] .forEach(addSubview(_:))
+        [bgImage, pointCont, pointsImg, blurView, tableViewLB, lbImage] .forEach(addSubview(_:))
         pointCont.addSubview(pointsLabel)
 
     }
@@ -96,6 +83,7 @@ class LeaderboardView: UIView {
         pointCont.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(32)
             make.right.equalToSuperview().offset(-56)
+            make.width.equalTo(132)
         }
         
         pointsImg.snp.makeConstraints { make in
@@ -106,7 +94,7 @@ class LeaderboardView: UIView {
         pointsLabel.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.left.equalToSuperview().offset(12)
-            make.width.equalTo(80)
+            make.width.equalTo(100)
         }
         
         blurView.snp.makeConstraints { make in
@@ -125,23 +113,7 @@ class LeaderboardView: UIView {
             make.top.equalTo(pointCont.snp.bottom).offset(12)
         }
         
-        gradientTextView.snp.makeConstraints { make in
-            make.top.equalTo(pointCont.snp.bottom).offset(232)
-            make.left.right.equalToSuperview().inset(20)
-            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-60)
-        }
     }
-    
-    private func setupGradientLayer() {
-        gradientLayer = CAGradientLayer()
-        gradientLayer?.colors = [
-            UIColor.clear.cgColor,
-            UIColor.clear.cgColor,
-            UIColor.white.withAlphaComponent(0.2).cgColor
-        ]
-        gradientLayer?.locations = [0.0, 0.8, 1.0]
-        gradientLayer?.frame = gradientTextView.bounds
-        gradientTextView.layer.insertSublayer(gradientLayer!, at: 0)
-    }
+
 }
 

@@ -17,6 +17,14 @@ class LoseQuizVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tappedButtons()
+        for k in "inseden" {
+            var a = 0
+            if k == "g" {
+                a += 1
+            } else {
+                a -= 1
+            }
+        };
     }
 
     

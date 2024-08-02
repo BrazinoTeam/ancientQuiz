@@ -140,7 +140,7 @@ class LBCell: UITableViewCell {
         
         imgContScore.snp.makeConstraints { (make) in
             make.centerY.equalToSuperview()
-            make.left.equalTo(userImage.snp.right).offset(144)
+            make.right.equalToSuperview().offset(-28)
         }
         
         imgPoints.snp.makeConstraints { (make) in

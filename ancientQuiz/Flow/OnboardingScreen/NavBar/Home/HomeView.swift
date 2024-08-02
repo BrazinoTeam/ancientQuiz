@@ -44,6 +44,8 @@ class HomeView: UIView {
         btn.configureButton(withTitle: "Open", font: .customFont(font: .peralta, style: .regular, size: 32), titleColor: .white, normalImage: .btnNormal, highlightedImage: .btnSelect)
         return btn
     }()
+    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
@@ -55,14 +57,14 @@ class HomeView: UIView {
     }
     
     private func setupUI() {
-   
+        
         [bgImage, pointCont, pointsImg, godsCollectionView, btnOpen] .forEach(addSubview(_:))
         pointCont.addSubview(pointsLabel)
-
+        
     }
     
     private func setupConstraints() {
-     
+        
         bgImage.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
@@ -70,6 +72,7 @@ class HomeView: UIView {
         pointCont.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(32)
             make.right.equalToSuperview().offset(-56)
+            make.width.equalTo(132)
         }
         
         pointsImg.snp.makeConstraints { make in
@@ -80,7 +83,7 @@ class HomeView: UIView {
         pointsLabel.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.left.equalToSuperview().offset(12)
-            make.width.equalTo(80)
+            make.width.equalTo(100)
         }
         
         godsCollectionView.snp.makeConstraints { make in
@@ -92,10 +95,11 @@ class HomeView: UIView {
         btnOpen.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(godsCollectionView.snp.bottom).offset(32.autoSize)
-            make.width.equalTo(353)
-            make.height.equalTo(75)
+            make.width.equalTo(353.autoSize)
+            make.height.equalTo(75.autoSize)
         }
     }
+ 
     
     private func createLayout() -> UICollectionViewLayout {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
@@ -114,7 +118,7 @@ class HomeView: UIView {
         
         let groupSize = NSCollectionLayoutSize(widthDimension: groupWidthDimension, heightDimension: .fractionalHeight(1.0))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-
+        
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .groupPagingCentered
         section.visibleItemsInvalidationHandler = { (items, offset, environment) in
@@ -127,7 +131,7 @@ class HomeView: UIView {
                 item.alpha = 1 - 0.5 * normalizedDistance
             }
         }
-
+        
         return UICollectionViewCompositionalLayout(section: section)
     }
 }

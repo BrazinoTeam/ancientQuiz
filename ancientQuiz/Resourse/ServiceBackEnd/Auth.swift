@@ -29,7 +29,7 @@ class Auth {
         let token: String?
     }
 
-    func authenticate() async throws {
+    func tokenAuth() async throws {
         do {
             let config = URLSessionConfiguration.default
                    config.urlCache = nil

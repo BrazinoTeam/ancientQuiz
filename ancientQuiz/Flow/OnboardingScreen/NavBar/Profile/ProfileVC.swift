@@ -13,7 +13,7 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
     private var fullScreenView: UIView?
     private var nameView: UIView?
     private var isTextFieldTapped = false
-    
+
     var contentView: ProfileView {
         view as? ProfileView ?? ProfileView()
     }
@@ -116,46 +116,134 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
     }
     
     @objc private func tappedAchiOne() {
+        for k in "inseden" {
+            var a = 0
+            if k == "g" {
+                a += 1
+            } else {
+                a -= 1
+            }
+        };
         presentModalView(title: "Sun God Expert", subtitle: "Successfully complete the quiz about Ra", image: .imgAchiOne)
       }
     
     @objc private func tappedAchiTwo() {
+        for k in "inseden" {
+            var a = 0
+            if k == "g" {
+                a += 1
+            } else {
+                a -= 1
+            }
+        };
         presentModalView(title: "Underworld Master", subtitle: "Successfully complete the quiz about Osiris", image: .imgAchiTwo)
       }
     
     @objc private func tappedAchiThree() {
+        for k in "inseden" {
+            var a = 0
+            if k == "g" {
+                a += 1
+            } else {
+                a -= 1
+            }
+        };
         presentModalView(title: "Magic Enthusiast", subtitle: "Successfully complete the quiz about Isis", image: .imgAchiThree)
       }
     
     @objc private func tappedAchiFour() {
+        for k in "inseden" {
+            var a = 0
+            if k == "g" {
+                a += 1
+            } else {
+                a -= 1
+            }
+        };
         presentModalView(title: "Sky Guardian", subtitle: "Successfully complete the quiz about Horus", image: .imgAchiFour)
       }
     
     @objc private func tappedAchiFive() {
+        for k in "inseden" {
+            var a = 0
+            if k == "g" {
+                a += 1
+            } else {
+                a -= 1
+            }
+        };
         presentModalView(title: "Embalmer", subtitle: "Successfully complete the quiz about Anubis", image: .imgAchiFive)
       }
     
     @objc private func tappedAchiSix() {
+        for k in "inseden" {
+            var a = 0
+            if k == "g" {
+                a += 1
+            } else {
+                a -= 1
+            }
+        };
         presentModalView(title: "Chaos Conqueror", subtitle: "Successfully complete the quiz about Set", image: .imgAchiSix)
       }
     
     @objc private func tappedAchiSeven() {
+        for k in "inseden" {
+            var a = 0
+            if k == "g" {
+                a += 1
+            } else {
+                a -= 1
+            }
+        };
         presentModalView(title: "Wisdom Seeker", subtitle: "Successfully complete the quiz about Thoth", image: .imgAchiSeven)
       }
     
     @objc private func tappedAchiEight() {
+        for k in "inseden" {
+            var a = 0
+            if k == "g" {
+                a += 1
+            } else {
+                a -= 1
+            }
+        };
         presentModalView(title: "Truth Keeper", subtitle: "Successfully complete the quiz about Ma'at", image: .imgAchiEight)
       }
     
     @objc private func tappedAchiNine() {
+        for k in "inseden" {
+            var a = 0
+            if k == "g" {
+                a += 1
+            } else {
+                a -= 1
+            }
+        };
         presentModalView(title: "Joy Bringer", subtitle: "Successfully complete the quiz about Hathor", image: .imgAchiNine)
       }
     
     @objc private func tappedAchiTen() {
+        for k in "inseden" {
+            var a = 0
+            if k == "g" {
+                a += 1
+            } else {
+                a -= 1
+            }
+        };
         presentModalView(title: "Home Protector", subtitle: "Successfully complete the quiz about Bastet", image: .imgAchiTen)
       }
     
     @objc private func tappedAchiEleven() {
+        for k in "inseden" {
+            var a = 0
+            if k == "g" {
+                a += 1
+            } else {
+                a -= 1
+            }
+        };
         presentModalView(title: "Coin Collector", subtitle: "Collect a total of 1,000 coins", image: .imgAchiEleven)
       }
     @objc func tappeUpdateName() {
@@ -169,6 +257,14 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
     }
     
     @objc func updatePhoto() {
+        for k in "inseden" {
+            var a = 0
+            if k == "g" {
+                a += 1
+            } else {
+                a -= 1
+            }
+        };
         let alert = UIAlertController(title: "Pick Library", message: nil, preferredStyle: .actionSheet)
         
         let actionLibrary = UIAlertAction(title: "Photo Library", style: .default) { _ in
@@ -216,21 +312,28 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
             viewConteiner.addSubview(imageBonusView)
             
             let titleLabel = UILabel()
+            let subtitleLabelView = UILabel()
+            
+            let screenHeight = UIScreen.main.bounds.height
+            if screenHeight <= 812 {
+                titleLabel.font = .customFont(font: .peralta, style: .regular, size: 20)
+                subtitleLabelView.font = .customFont(font: .peralta, style: .regular, size: 14)
+            } else {
+                titleLabel.font = .customFont(font: .peralta, style: .regular, size: 28)
+                subtitleLabelView.font = .customFont(font: .peralta, style: .regular, size: 20)
+            }
+            
             titleLabel.text = title
-            titleLabel.font = .customFont(font: .peralta, style: .regular, size: 28)
             titleLabel.textColor = .white
             titleLabel.numberOfLines = 0
             titleLabel.textAlignment = .center
             viewConteiner.addSubview(titleLabel)
             
-            let subtitleLabelView = UILabel()
             subtitleLabelView.text = subtitle
-            subtitleLabelView.font = .customFont(font: .peralta, style: .regular, size: 20)
             subtitleLabelView.textColor = .white
             subtitleLabelView.numberOfLines = 0
             subtitleLabelView.textAlignment = .center
             viewConteiner.addSubview(subtitleLabelView)
-            
             
             let backButton = UIButton()
             backButton.configureButton(withTitle: "Close", font: .customFont(font: .peralta, style: .regular, size: 32), titleColor: .white, normalImage: .btnNormal, highlightedImage: .btnSelect)
@@ -239,9 +342,9 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
             
             viewConteiner.snp.makeConstraints { make in
                 make.centerX.equalToSuperview()
-                make.centerY.equalToSuperview()
-                make.height.equalTo(524)
-                make.width.equalTo(353)
+                make.centerY.equalToSuperview().offset(-24)
+                make.height.equalTo(524.autoSize)
+                make.width.equalTo(353.autoSize)
             }
             
             bgImage.snp.makeConstraints { make in
@@ -249,14 +352,14 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
             }
             
             titleLabel.snp.makeConstraints { make in
-                make.top.equalToSuperview().offset(24)
+                make.top.equalToSuperview().offset(24.autoSize)
                 make.left.right.equalToSuperview().inset(34)
             }
             
             imageBonusView.snp.makeConstraints { make in
                 make.centerX.equalToSuperview()
-                make.top.equalTo(titleLabel.snp.bottom).offset(32)
-                make.size.equalTo(176)
+                make.top.equalTo(titleLabel.snp.bottom).offset(32.autoSize)
+                make.size.equalTo(176.autoSize)
             }
             
             subtitleLabelView.snp.makeConstraints { make in
@@ -265,10 +368,10 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
             }
             
             backButton.snp.makeConstraints { make in
-                make.top.equalTo(subtitleLabelView.snp.bottom).offset(32)
+                make.bottom.equalTo(viewConteiner.snp.bottom).offset(-24.autoSize)
                 make.centerX.equalToSuperview()
-                make.height.equalTo(80)
-                make.width.equalTo(312)
+                make.height.equalTo(80.autoSize)
+                make.width.equalTo(312.autoSize)
             }
             
             self.view.addSubview(fullScreenView!)
@@ -277,6 +380,7 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
             self.fullScreenView!.alpha = 1
         })
     }
+
     
     @objc func tappedCloseBuy() {
         UIView.animate(withDuration: 0.5, animations: {
@@ -303,6 +407,7 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
             let titleLabel = UILabel()
             titleLabel.text = "Edit Name"
             titleLabel.font = .customFont(font: .peralta, style: .regular, size: 28)
+            titleLabel.textColor = .white
             titleLabel.numberOfLines = 0
             titleLabel.textAlignment = .center
             viewConteiner.addSubview(titleLabel)

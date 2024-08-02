@@ -125,27 +125,33 @@ class BonusView: UIView {
             make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(124.autoSize)
             make.centerX.equalToSuperview()
         }
-
-        slotView.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview().offset(-50.autoSize)
-            make.height.equalTo(120)
-            make.width.equalTo(320)
-        }
         
         slotImage.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview().offset(-28.autoSize)
+            make.top.equalTo(titleLabel.snp.bottom).offset(48.autoSize)
+            make.height.equalTo(308.autoSize)
+            make.width.equalTo(353.autoSize)
+        }
+        
+        slotView.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.centerY.equalTo(slotImage)
+            make.height.equalTo(120.autoSize)
+            make.width.equalTo(300.autoSize)
         }
         
         countImage.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview().offset(24)
+            make.centerY.equalTo(slotImage)
+            make.width.equalTo(260.autoSize)
+            make.height.equalTo(150.autoSize)
         }
 
         bonusBtn.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(slotImage.snp.bottom).offset(48)
+            make.top.equalTo(slotImage.snp.bottom).offset(32.autoSize)
+            make.width.equalTo(353.autoSize)
+            make.height.equalTo(80.autoSize)
         }
         
         timeView.snp.makeConstraints { make in

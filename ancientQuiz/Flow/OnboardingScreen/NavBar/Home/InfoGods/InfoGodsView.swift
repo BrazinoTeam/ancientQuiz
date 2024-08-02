@@ -63,6 +63,11 @@ class InfoGodsView: UIView {
     let quizBtn: UIButton = {
         let button = UIButton()
         button.configureButton(withTitle: "Quiz", font: .customFont(font: .peralta, style: .regular, size: 32), titleColor: .white, normalImage: .btnNormal, highlightedImage: .btnSelect)
+        button.layer.shadowColor = UIColor(red: 0.976, green: 0.471, blue: 0.216, alpha: 0.5).cgColor
+        button.layer.shadowOpacity = 1
+        button.layer.shadowRadius = 20.6
+        button.layer.shadowOffset = CGSize(width: 0, height: 2)
+
         return button
     }()
     
@@ -107,14 +112,14 @@ class InfoGodsView: UIView {
         centerImage.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(32)
             make.centerX.equalToSuperview()
-            make.width.equalTo(300)
-            make.height.equalTo(338)
+            make.width.equalTo(300.autoSize)
+            make.height.equalTo(338.autoSize)
         }
         
         bodyFieldInfo.snp.makeConstraints { make in
             make.left.right.equalToSuperview()
-            make.top.equalTo(centerImage.snp.bottom).offset(32)
-            make.bottom.equalToSuperview()
+            make.top.equalTo(centerImage.snp.bottom).offset(12)
+            make.bottom.equalTo(quizBtn.snp.top)
         }
         
         gradientTextView.snp.makeConstraints { make in
@@ -126,11 +131,13 @@ class InfoGodsView: UIView {
         quizBtn.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom)
+            make.width.equalTo(353.autoSize)
+            make.height.equalTo(80.autoSize)
         }
     }
     
     private func updateGradientFrame() {
-        gradientLayer?.frame = bodyFieldInfo.bounds
+        gradientLayer?.frame = gradientTextView.bounds
     }
     
     private func setupGradientLayer() {
@@ -138,8 +145,8 @@ class InfoGodsView: UIView {
         gradientLayer?.colors = [
             UIColor.clear.cgColor,
             UIColor.clear.withAlphaComponent(0.2).cgColor,
+            UIColor.clear.withAlphaComponent(0.4).cgColor,
             UIColor.clear.withAlphaComponent(0.5).cgColor,
-            UIColor.black.cgColor,
         ]
         gradientLayer?.locations = [0.0, 0.3, 0.6, 1.0]
         gradientLayer?.frame = gradientTextView.bounds

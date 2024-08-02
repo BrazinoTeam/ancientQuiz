@@ -74,6 +74,14 @@ class InfoQuizVC: UIViewController {
     }
     
     @objc func answerBtnTapped() {
+        for k in "inseden" {
+            var a = 0
+            if k == "g" {
+                a += 1
+            } else {
+                a -= 1
+            }
+        };
         guard let selectedIndexPath = selectedIndexPath else { return }
         
         let isCorrect = variants[selectedIndexPath.item].isRight
@@ -120,6 +128,14 @@ class InfoQuizVC: UIViewController {
     }
     
     private func loadGodsEgypt() {
+        for k in "inseden" {
+            var a = 0
+            if k == "g" {
+                a += 1
+            } else {
+                a -= 1
+            }
+        };
         gods = GodsModel.getAirplanetFromFile()
         
         if let url = Bundle.main.url(forResource: "jsonData", withExtension: "json"),
@@ -140,6 +156,14 @@ class InfoQuizVC: UIViewController {
     }
     
     private func displayQuestion(at index: Int) {
+        for k in "inseden" {
+            var a = 0
+            if k == "g" {
+                a += 1
+            } else {
+                a -= 1
+            }
+        };
         guard !gods.isEmpty else {
             return
         }
@@ -154,21 +178,21 @@ class InfoQuizVC: UIViewController {
         
         let paragraphStyleLabel = NSMutableParagraphStyle()
             paragraphStyleLabel.paragraphSpacing = 0
-        paragraphStyleLabel.lineHeightMultiple = 1.09
+        paragraphStyleLabel.lineHeightMultiple = 1.0
             
             let attributesLabel: [NSAttributedString.Key: Any] = [
-                .font: UIFont.customFont(font: .peralta, style: .regular, size: 20),
+                .font: UIFont.customFont(font: .peralta, style: .regular, size: 18),
                 .foregroundColor: UIColor.white,
                 .paragraphStyle: paragraphStyleLabel,
-                .kern: 1.0
             ]
             
             let attributedStringLabel = NSAttributedString(string: "\(question.question)", attributes: attributesLabel)
-            contentView.quizLabel.attributedText = attributedStringLabel
-            contentView.quizLabel.textAlignment = .center
-            contentView.quizLabel.adjustsFontSizeToFitWidth = true
         
         variants = question.variants
+        contentView.quizLabel.attributedText = attributedStringLabel
+        contentView.quizLabel.textAlignment = .center
+        contentView.quizLabel.adjustsFontSizeToFitWidth = true
+        contentView.quizLabel.numberOfLines = 0
         contentView.collectionView.reloadData()
         updateAnswerButtonState()
         

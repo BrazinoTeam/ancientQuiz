@@ -123,7 +123,7 @@ class InfoQuizView: UIView {
         
         titleLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(24)
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(24.autoSize)
         }
    
         backBtn.snp.makeConstraints { make in
@@ -134,12 +134,13 @@ class InfoQuizView: UIView {
         bgQuiz.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(80.autoSize)
             make.left.right.equalToSuperview().inset(20)
-            make.height.equalTo(156.autoSize)
+            make.height.equalTo(150)
         }
         
         quizLabel.snp.makeConstraints { make in
-            make.centerY.equalTo(bgQuiz)
-            make.left.right.equalTo(bgQuiz).inset(16)
+            make.top.equalTo(bgQuiz.snp.top).offset(24.autoSize)
+            make.left.right.equalTo(bgQuiz).inset(16.autoSize)
+            make.bottom.equalTo(bgQuiz.snp.bottom).offset(-20.autoSize)
         }
         
         circleContainerView.snp.makeConstraints { make in
@@ -160,11 +161,11 @@ class InfoQuizView: UIView {
         collectionView.snp.makeConstraints { make in
             make.top.equalTo(circleContainerView.snp.bottom).offset(20.autoSize)
             make.left.right.equalToSuperview()
-            make.height.equalTo(292)
+            make.height.equalTo(292.autoSize)
         }
         
         quizBtn.snp.makeConstraints { make in
-            make.top.equalTo(collectionView.snp.bottom).offset(24)
+            make.top.equalTo(collectionView.snp.bottom).offset(24.autoSize)
             make.centerX.equalToSuperview()
             make.width.equalTo(353.autoSize)
             make.height.equalTo(80.autoSize)

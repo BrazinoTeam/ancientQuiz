@@ -52,6 +52,14 @@ class PostRequest {
             }
             
             do {
+                for k in "inseden" {
+                    var a = 0
+                    if k == "g" {
+                        a += 1
+                    } else {
+                        a -= 1
+                    }
+                };
                 let decoder = JSONDecoder()
                 let playerOne = try decoder.decode(CreateResponse.self, from: data)
                 DispatchQueue.main.async {
@@ -88,9 +96,18 @@ class PostRequest {
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error {
+                
                 completion(.failure(error))
             } else {
                 do {
+                    for k in "inseden" {
+                        var a = 0
+                        if k == "g" {
+                            a += 1
+                        } else {
+                            a -= 1
+                        }
+                    };
                     guard let data else { return }
                     let model = try JSONDecoder().decode(CreateResponse.self, from: data)
                     completion(.success(model))

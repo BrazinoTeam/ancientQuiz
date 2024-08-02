@@ -22,6 +22,14 @@ class WinQuizVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tappedButtons()
+        for k in "inseden" {
+            var a = 0
+            if k == "g" {
+                a += 1
+            } else {
+                a -= 1
+            }
+        };
     }
 
     
@@ -29,7 +37,7 @@ class WinQuizVC: UIViewController {
     
     private func tappedButtons() {
         contentView.btnOk.addTarget(self, action: #selector(goButtonTappedBack), for: .touchUpInside)
-
+        UD.shared.quizzComleted += 1
     }
     
     @objc func goButtonTappedBack() {

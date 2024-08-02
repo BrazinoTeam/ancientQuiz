@@ -140,7 +140,7 @@ final class NavBar: UITabBarController {
         $0.axis = .horizontal
         $0.distribution = .equalSpacing
         $0.alignment = .center
-        $0.frame = CGRect(x: -5, y: view.frame.height - 127, width: view.frame.width + 10, height: 133)
+        $0.frame = CGRect(x: -20, y: view.frame.height - 103, width: view.frame.width + 40, height: 113)
         $0.addArrangedSubview(btn1)
         $0.addArrangedSubview(btn2)
         $0.addArrangedSubview(btn3)
@@ -150,7 +150,7 @@ final class NavBar: UITabBarController {
         $0.layer.borderWidth = 5
         $0.layer.borderColor = UIColor.cYellowBack.cgColor
         $0.isLayoutMarginsRelativeArrangement = true
-        $0.layoutMargins = UIEdgeInsets(top: 10, left: 10, bottom: 0, right: 10)
+        $0.layoutMargins = UIEdgeInsets(top: 15, left: 10, bottom: 0, right: 15)
         $0.clipsToBounds = true
         return $0
     }(UIStackView())
@@ -180,8 +180,8 @@ final class NavBar: UITabBarController {
     
     private func setupConstraints() {
         customBar.snp.makeConstraints { make in
-            make.left.right.equalToSuperview().inset(-5)
-            make.bottom.equalToSuperview().offset(5)
+            make.left.right.equalToSuperview().inset(-15)
+            make.bottom.equalToSuperview().offset(20)
             make.height.equalTo(133)
         }
         

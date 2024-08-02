@@ -34,7 +34,8 @@ class HomeVC: UIViewController {
         super.viewWillAppear(animated)
         updatePointsLabel()
     }
-    
+ 
+  
     private func updatePointsLabel() {
         contentView.pointsLabel.text = "\(UD.shared.scorePoints)"
     }
