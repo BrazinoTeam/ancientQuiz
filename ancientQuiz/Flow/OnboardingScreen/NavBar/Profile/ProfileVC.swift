@@ -124,7 +124,7 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
                 a -= 1
             }
         };
-        presentModalView(title: "Sun God Expert", subtitle: "Successfully complete the quiz about Ra", image: .imgAchiOne)
+        presentModalView(title: "Sun God Expert", subtitle: "Successfully complete the quiz about Ra", image: .imgAchiOne, height: 488)
       }
     
     @objc private func tappedAchiTwo() {
@@ -136,7 +136,7 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
                 a -= 1
             }
         };
-        presentModalView(title: "Underworld Master", subtitle: "Successfully complete the quiz about Osiris", image: .imgAchiTwo)
+        presentModalView(title: "Underworld Master", subtitle: "Successfully complete the quiz about Osiris", image: .imgAchiTwo, height: 524)
       }
     
     @objc private func tappedAchiThree() {
@@ -148,7 +148,7 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
                 a -= 1
             }
         };
-        presentModalView(title: "Magic Enthusiast", subtitle: "Successfully complete the quiz about Isis", image: .imgAchiThree)
+        presentModalView(title: "Magic Enthusiast", subtitle: "Successfully complete the quiz about Isis", image: .imgAchiThree, height: 488)
       }
     
     @objc private func tappedAchiFour() {
@@ -160,7 +160,7 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
                 a -= 1
             }
         };
-        presentModalView(title: "Sky Guardian", subtitle: "Successfully complete the quiz about Horus", image: .imgAchiFour)
+        presentModalView(title: "Sky Guardian", subtitle: "Successfully complete the quiz about Horus", image: .imgAchiFour, height: 488)
       }
     
     @objc private func tappedAchiFive() {
@@ -172,7 +172,7 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
                 a -= 1
             }
         };
-        presentModalView(title: "Embalmer", subtitle: "Successfully complete the quiz about Anubis", image: .imgAchiFive)
+        presentModalView(title: "Embalmer", subtitle: "Successfully complete the quiz about Anubis", image: .imgAchiFive, height: 488)
       }
     
     @objc private func tappedAchiSix() {
@@ -184,7 +184,7 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
                 a -= 1
             }
         };
-        presentModalView(title: "Chaos Conqueror", subtitle: "Successfully complete the quiz about Set", image: .imgAchiSix)
+        presentModalView(title: "Chaos Conqueror", subtitle: "Successfully complete the quiz about Set", image: .imgAchiSix, height: 488)
       }
     
     @objc private func tappedAchiSeven() {
@@ -196,7 +196,7 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
                 a -= 1
             }
         };
-        presentModalView(title: "Wisdom Seeker", subtitle: "Successfully complete the quiz about Thoth", image: .imgAchiSeven)
+        presentModalView(title: "Wisdom Seeker", subtitle: "Successfully complete the quiz about Thoth", image: .imgAchiSeven, height: 488)
       }
     
     @objc private func tappedAchiEight() {
@@ -208,7 +208,7 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
                 a -= 1
             }
         };
-        presentModalView(title: "Truth Keeper", subtitle: "Successfully complete the quiz about Ma'at", image: .imgAchiEight)
+        presentModalView(title: "Truth Keeper", subtitle: "Successfully complete the quiz about Ma'at", image: .imgAchiEight, height: 488)
       }
     
     @objc private func tappedAchiNine() {
@@ -220,7 +220,7 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
                 a -= 1
             }
         };
-        presentModalView(title: "Joy Bringer", subtitle: "Successfully complete the quiz about Hathor", image: .imgAchiNine)
+        presentModalView(title: "Joy Bringer", subtitle: "Successfully complete the quiz about Hathor", image: .imgAchiNine, height: 488)
       }
     
     @objc private func tappedAchiTen() {
@@ -232,7 +232,7 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
                 a -= 1
             }
         };
-        presentModalView(title: "Home Protector", subtitle: "Successfully complete the quiz about Bastet", image: .imgAchiTen)
+        presentModalView(title: "Home Protector", subtitle: "Successfully complete the quiz about Bastet", image: .imgAchiTen, height: 488)
       }
     
     @objc private func tappedAchiEleven() {
@@ -244,7 +244,7 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
                 a -= 1
             }
         };
-        presentModalView(title: "Coin Collector", subtitle: "Collect a total of 1,000 coins", image: .imgAchiEleven)
+        presentModalView(title: "Coin Collector", subtitle: "Collect a total of 1,000 coins", image: .imgAchiEleven, height: 488)
       }
     @objc func tappeUpdateName() {
         presentUpdateNameView()
@@ -253,6 +253,8 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
     private func checkFotoLoad() {
         if let savedImage = getImageFromLocal() {
             contentView.btnUserPhoto.setImage(savedImage, for: .normal)
+            contentView.imgPhotoAdd.isHidden = true
+            
         }
     }
     
@@ -289,7 +291,7 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
         present(alert, animated: true)
     }
     
-    func presentModalView(title: String, subtitle: String, image: UIImage) {
+    func presentModalView(title: String, subtitle: String, image: UIImage, height: Double) {
         if fullScreenView == nil {
             fullScreenView = UIView(frame: self.view.bounds)
             fullScreenView!.backgroundColor = .black.withAlphaComponent(0.8)
@@ -340,10 +342,11 @@ class ProfileVC: UIViewController, UITextFieldDelegate {
             backButton.addTarget(self, action: #selector(tappedCloseBuy), for: .touchUpInside)
             fullScreenView!.addSubview(backButton)
             
+
             viewConteiner.snp.makeConstraints { make in
                 make.centerX.equalToSuperview()
                 make.centerY.equalToSuperview().offset(-24)
-                make.height.equalTo(524.autoSize)
+                make.height.equalTo(height.autoSize)
                 make.width.equalTo(353.autoSize)
             }
             

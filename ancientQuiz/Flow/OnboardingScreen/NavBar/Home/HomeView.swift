@@ -88,13 +88,13 @@ class HomeView: UIView {
         
         godsCollectionView.snp.makeConstraints { make in
             make.left.right.equalToSuperview()
-            make.height.equalTo(388.autoSize)
+            make.height.equalTo(360.autoSize)
             make.top.equalTo(pointCont.snp.bottom).offset(60.autoSize)
         }
         
         btnOpen.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(godsCollectionView.snp.bottom).offset(32.autoSize)
+            make.top.equalTo(godsCollectionView.snp.bottom).offset(48.autoSize)
             make.width.equalTo(353.autoSize)
             make.height.equalTo(75.autoSize)
         }

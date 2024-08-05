@@ -52,7 +52,7 @@ class InfoQuizView: UIView {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.distribution = .equalSpacing
-        stackView.spacing = 12
+        stackView.spacing = 6
         return stackView
     }()
     
@@ -105,7 +105,7 @@ class InfoQuizView: UIView {
             circleView.image = .imgScarabGrey
             circleView.contentMode = .scaleToFill
             circleView.snp.makeConstraints { make in
-                make.width.height.equalTo(24.autoSize)
+                make.width.height.equalTo(30.autoSize)
             }
             circleViews.append(circleView)
             circleContainerView.addArrangedSubview(circleView)
@@ -145,7 +145,7 @@ class InfoQuizView: UIView {
         
         circleContainerView.snp.makeConstraints { make in
             make.top.equalTo(bgQuiz.snp.bottom).offset(24)
-            make.centerX.equalToSuperview()
+            make.left.right.equalToSuperview().inset(20)
         }
         
         imgChoose.snp.makeConstraints { make in

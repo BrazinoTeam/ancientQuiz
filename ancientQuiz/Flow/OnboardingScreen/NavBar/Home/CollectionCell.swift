@@ -18,6 +18,7 @@ class CollectionCell: UICollectionViewCell {
     
     private(set) lazy var imgGods: UIImageView = {
         let iv = UIImageView()
+        iv.contentMode = .scaleToFill
         return iv
     }()
     
@@ -49,10 +50,7 @@ class CollectionCell: UICollectionViewCell {
         }
         
         imgGods.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.centerX.equalToSuperview()
-            make.width.equalTo(300.autoSize)
-            make.height.equalTo(336.autoSize)
+            make.edges.equalToSuperview()
         }
     }
 }

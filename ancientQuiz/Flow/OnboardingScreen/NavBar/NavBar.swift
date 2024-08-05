@@ -150,7 +150,7 @@ final class NavBar: UITabBarController {
         $0.layer.borderWidth = 5
         $0.layer.borderColor = UIColor.cYellowBack.cgColor
         $0.isLayoutMarginsRelativeArrangement = true
-        $0.layoutMargins = UIEdgeInsets(top: 15, left: 10, bottom: 0, right: 15)
+        $0.layoutMargins = UIEdgeInsets(top: 15, left: 40, bottom: 0, right: 40)
         $0.clipsToBounds = true
         return $0
     }(UIStackView())

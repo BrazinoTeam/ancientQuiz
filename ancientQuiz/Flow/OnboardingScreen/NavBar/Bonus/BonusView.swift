@@ -83,7 +83,11 @@ class BonusView: UIView {
         label.font = .customFont(font: .peralta, style: .regular, size: 46)
         label.textAlignment = .center
         label.numberOfLines = 0
-        label.textColor = .yellow
+        label.textColor = .white
+        label.layer.shadowColor = UIColor(red: 1, green: 0.623, blue: 0.18, alpha: 1).cgColor
+        label.layer.shadowOpacity = 1
+        label.layer.shadowRadius = 26.2
+        label.layer.shadowOffset = CGSize(width: 0, height: 0)
         return label
     }()
 

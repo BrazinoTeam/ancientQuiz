@@ -36,6 +36,7 @@ class WinQuizView: UIView {
     private (set) var imgWinner: UIImageView = {
         let imageView = UIImageView()
         imageView.image = .imgWin
+        imageView.contentMode = .scaleToFill
         return imageView
     }()
     
@@ -67,7 +68,7 @@ class WinQuizView: UIView {
         }
         
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(24.autoSize)
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(60.autoSize)
             make.left.right.equalToSuperview().inset(20)
         }
         
@@ -77,20 +78,20 @@ class WinQuizView: UIView {
         }
         
         imgPointsWin.snp.makeConstraints { make in
-            make.top.equalTo(subTitleLabel.snp.bottom).offset(-8.autoSize)
+            make.top.equalTo(subTitleLabel.snp.bottom).offset(-12.autoSize)
             make.centerX.equalToSuperview()
             make.width.equalTo(249.autoSize)
             make.height.equalTo(136.autoSize)
         }
         
         imgWinner.snp.makeConstraints { make in
-            make.top.equalTo(imgPointsWin.snp.bottom).offset(-8.autoSize)
+            make.top.equalTo(imgPointsWin.snp.bottom).offset(-24.autoSize)
             make.left.right.equalToSuperview().inset(20)
-            make.size.equalTo(367.autoSize)
+            make.size.equalTo(313.autoSize)
         }
         
         btnOk.snp.makeConstraints { make in
-            make.top.equalTo(imgWinner.snp.bottom).offset(16.autoSize)
+            make.top.equalTo(imgWinner.snp.bottom)
             make.centerX.equalToSuperview()
             make.width.equalTo(353.autoSize)
             make.height.equalTo(80.autoSize)

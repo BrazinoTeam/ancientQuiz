@@ -63,7 +63,7 @@ class LoseQuizView: UIView {
         }
         
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(24.autoSize)
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(60.autoSize)
             make.left.right.equalToSuperview().inset(20)
         }
         
@@ -75,11 +75,11 @@ class LoseQuizView: UIView {
         imgLosed.snp.makeConstraints { make in
             make.top.equalTo(subTitleLabel.snp.bottom).offset(32.autoSize)
             make.left.right.equalToSuperview().inset(20)
-            make.size.equalTo(367.autoSize)
+            make.size.equalTo(313.autoSize)
         }
         
         btnOk.snp.makeConstraints { make in
-            make.top.equalTo(imgLosed.snp.bottom).offset(32.autoSize)
+            make.top.equalTo(imgLosed.snp.bottom)
             make.centerX.equalToSuperview()
             make.width.equalTo(353.autoSize)
             make.height.equalTo(80.autoSize)

@@ -28,9 +28,16 @@ class ProfileView: UIView, UITextFieldDelegate {
     private(set) var btnUserPhoto: UIButton = {
         let btn = UIButton()
         btn.setBackgroundImage(.imgUserProfile, for: .normal)
-        btn.layer.cornerRadius = 5
+        btn.layer.cornerRadius = 24
         btn.clipsToBounds = true
         return btn
+    }()
+    
+    private (set) var imgPhotoAdd: UIImageView = {
+        let img = UIImageView()
+        img.image = .imgCamera
+        img.contentMode = .scaleToFill
+        return img
     }()
     
     private (set) var labelUserName: UILabel = {
@@ -196,7 +203,7 @@ class ProfileView: UIView, UITextFieldDelegate {
     }
     
     private func setupUI() {
-        [bgImage, titleLabel, containerProfile, containerAnaliz, btnUserPhoto, btnEdit, scrollView] .forEach(addSubview(_:))
+        [bgImage, titleLabel, containerProfile, containerAnaliz, btnUserPhoto, imgPhotoAdd, btnEdit, scrollView] .forEach(addSubview(_:))
         containerProfile.addSubview(labelUserName)
         containerAnaliz.addSubview(labelTotalCoints)
         containerAnaliz.addSubview(labelQuizzes)
@@ -243,7 +250,13 @@ class ProfileView: UIView, UITextFieldDelegate {
         btnUserPhoto.snp.makeConstraints { make in
             make.centerY.equalTo(containerProfile)
             make.left.equalTo(containerProfile.snp.left).offset(16)
-            make.size.equalTo(52)
+            make.size.equalTo(48)
+        }
+        
+        imgPhotoAdd.snp.makeConstraints { make in
+            make.bottom.equalTo(btnUserPhoto.snp.bottom)
+            make.right.equalTo(btnUserPhoto.snp.right)
+            make.size.equalTo(18)
         }
         
         labelUserName.snp.makeConstraints { make in

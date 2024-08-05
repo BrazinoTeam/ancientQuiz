@@ -97,13 +97,13 @@ class BonusVC: UIViewController {
             }
             
             imageBonusView.snp.makeConstraints { make in
-                make.top.equalTo(titleLabel.snp.bottom).offset(28.autoSize)
+                make.top.equalTo(titleLabel.snp.bottom).offset(4.autoSize)
                 make.centerX.equalToSuperview()
-                make.size.equalTo(245.autoSize)
+                make.size.equalTo(300.autoSize)
             }
             
             imgPointsCount.snp.makeConstraints { make in
-                make.top.equalTo(imageBonusView.snp.bottom).offset(32.autoSize)
+                make.top.equalTo(imageBonusView.snp.bottom)
                 make.centerX.equalTo(imageBonusView)
                 make.height.equalTo(74.autoSize)
                 make.width.equalTo(224.autoSize)
@@ -221,6 +221,10 @@ extension BonusVC {
     
     private func setupCircularProgressView() {
         let progressView = CircularProgressView(radius: 150)
+        progressView.layer.shadowColor = UIColor(red: 1, green: 0.623, blue: 0.18, alpha: 1).cgColor
+        progressView.layer.shadowOpacity = 1
+        progressView.layer.shadowRadius = 5
+        progressView.layer.shadowOffset = CGSize(width: 2, height: 2)
         contentView.addSubview(progressView)
         
         progressView.snp.makeConstraints { make in
@@ -292,46 +296,15 @@ extension BonusVC {
                     let timeRemaining = calendar.dateComponents([.hour, .minute, .second], from: now, to: targetDate)
                     let timeString = String(format: "%02d : %02d : %02d", timeRemaining.hour ?? 0, timeRemaining.minute ?? 0, timeRemaining.second ?? 0)
                     self.contentView.timerCountLabel.text = "\(timeString)"
-                    self.updateProgress() // Обновите круговой индикатор
+                    self.contentView.timerCountLabel.layer.shadowColor = UIColor(red: 1, green: 0.623, blue: 0.18, alpha: 1).cgColor
+                    self.contentView.timerCountLabel.layer.shadowOpacity = 1
+                    self.contentView.timerCountLabel.layer.shadowRadius = 5
+                    self.contentView.timerCountLabel.layer.shadowOffset = CGSize(width: 2, height: 2)
+                    self.updateProgress()
                 }
             }
         } else {
             UserDefaults.standard.set(now, forKey: "LastVisitDate")
         }
     }
-
-    
-//    func startCountdownTimer() {
-//        let calendar = Calendar.current
-//        
-//        guard let lastVisitDate = UD.shared.lastBonusDate,
-//              let targetDate = calendar.date(byAdding: .day, value: 1, to: lastVisitDate) else {
-//            return
-//        }
-//        
-//        let now = Date()
-//        if now < targetDate {
-//            let timeRemaining = calendar.dateComponents([.hour, .minute, .second], from: now, to: targetDate)
-//            Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] timer in
-//                guard let self = self else {
-//                    timer.invalidate()
-//                    return
-//                }
-//                
-//                let now = Date()
-//                if now >= targetDate {
-//                    UserDefaults.standard.set(now, forKey: "LastVisitDate")
-//                    self.dismiss(animated: true, completion: nil)
-//                    timer.invalidate()
-//                } else {
-//                    let timeRemaining = calendar.dateComponents([.hour, .minute, .second], from: now, to: targetDate)
-//                    let timeString = String(format: "%02d : %02d : %02d", timeRemaining.hour ?? 0, timeRemaining.minute ?? 0, timeRemaining.second ?? 0)
-//                    self.contentView.timerCountLabel.text = "\(timeString)"
-//                }
-//            }
-//        } else {
-//            UserDefaults.standard.set(now, forKey: "LastVisitDate")
-//        }
-//    }
-    
 }
